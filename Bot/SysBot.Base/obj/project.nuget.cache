@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "HgqqgfN1EoQjzpuHfkfDxOAwtHmHvvOyJjvDnZxaC2lnL0lIStsWwHZZnhjsJgrQPp1ve2R6gKmHPUNJevt49g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rich\\.nuget\\packages\\libusbdotnet\\2.2.29\\libusbdotnet.2.2.29.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\nlog\\5.2.3\\nlog.5.2.3.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

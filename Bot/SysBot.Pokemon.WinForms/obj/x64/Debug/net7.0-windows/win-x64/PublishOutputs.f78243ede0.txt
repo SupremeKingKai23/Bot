@@ -1,0 +1,7 @@
+C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.WinForms\bin\Release\Publish\MergeBot.pdb
+C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.WinForms\bin\Release\Publish\SysBot.Base.pdb
+C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.WinForms\bin\Release\Publish\SysBot.Pokemon.Discord.pdb
+C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.WinForms\bin\Release\Publish\SysBot.Pokemon.Twitch.pdb
+C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.WinForms\bin\Release\Publish\SysBot.Pokemon.YouTube.pdb
+C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.WinForms\bin\Release\Publish\SysBot.Pokemon.pdb
+C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.WinForms\bin\Release\Publish\MergeBot.exe

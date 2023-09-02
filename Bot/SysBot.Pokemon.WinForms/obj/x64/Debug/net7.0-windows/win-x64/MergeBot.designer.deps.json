@@ -1,0 +1,660 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Discord.Net/3.12.0": {
+        "dependencies": {
+          "Discord.Net.Commands": "3.12.0",
+          "Discord.Net.Core": "3.12.0",
+          "Discord.Net.Interactions": "3.12.0",
+          "Discord.Net.Rest": "3.12.0",
+          "Discord.Net.WebSocket": "3.12.0",
+          "Discord.Net.Webhook": "3.12.0"
+        }
+      },
+      "Discord.Net.Commands/3.12.0": {
+        "dependencies": {
+          "Discord.Net.Core": "3.12.0"
+        },
+        "runtime": {
+          "lib/net6.0/Discord.Net.Commands.dll": {
+            "assemblyVersion": "3.12.0.0",
+            "fileVersion": "3.12.0.0"
+          }
+        }
+      },
+      "Discord.Net.Core/3.12.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "System.Collections.Immutable": "5.0.0",
+          "System.Interactive.Async": "5.0.0",
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/net6.0/Discord.Net.Core.dll": {
+            "assemblyVersion": "3.12.0.0",
+            "fileVersion": "3.12.0.0"
+          }
+        }
+      },
+      "Discord.Net.Interactions/3.12.0": {
+        "dependencies": {
+          "Discord.Net.Core": "3.12.0",
+          "Discord.Net.Rest": "3.12.0",
+          "Discord.Net.WebSocket": "3.12.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "System.Collections.Immutable": "5.0.0",
+          "System.Reactive": "5.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Discord.Net.Interactions.dll": {
+            "assemblyVersion": "3.12.0.0",
+            "fileVersion": "3.12.0.0"
+          }
+        }
+      },
+      "Discord.Net.Rest/3.12.0": {
+        "dependencies": {
+          "Discord.Net.Core": "3.12.0"
+        },
+        "runtime": {
+          "lib/net6.0/Discord.Net.Rest.dll": {
+            "assemblyVersion": "3.12.0.0",
+            "fileVersion": "3.12.0.0"
+          }
+        }
+      },
+      "Discord.Net.Webhook/3.12.0": {
+        "dependencies": {
+          "Discord.Net.Core": "3.12.0",
+          "Discord.Net.Rest": "3.12.0"
+        },
+        "runtime": {
+          "lib/net6.0/Discord.Net.Webhook.dll": {
+            "assemblyVersion": "3.12.0.0",
+            "fileVersion": "3.12.0.0"
+          }
+        }
+      },
+      "Discord.Net.WebSocket/3.12.0": {
+        "dependencies": {
+          "Discord.Net.Core": "3.12.0",
+          "Discord.Net.Rest": "3.12.0"
+        },
+        "runtime": {
+          "lib/net6.0/Discord.Net.WebSocket.dll": {
+            "assemblyVersion": "3.12.0.0",
+            "fileVersion": "3.12.0.0"
+          }
+        }
+      },
+      "Google.Apis/1.61.0": {
+        "dependencies": {
+          "Google.Apis.Core": "1.61.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.dll": {
+            "assemblyVersion": "1.61.0.0",
+            "fileVersion": "1.61.0.0"
+          }
+        }
+      },
+      "Google.Apis.Auth/1.61.0": {
+        "dependencies": {
+          "Google.Apis": "1.61.0",
+          "Google.Apis.Core": "1.61.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {
+            "assemblyVersion": "1.61.0.0",
+            "fileVersion": "1.61.0.0"
+          },
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {
+            "assemblyVersion": "1.61.0.0",
+            "fileVersion": "1.61.0.0"
+          }
+        }
+      },
+      "Google.Apis.Core/1.61.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {
+            "assemblyVersion": "1.61.0.0",
+            "fileVersion": "1.61.0.0"
+          }
+        }
+      },
+      "Google.Apis.YouTube.v3/1.61.0.3155": {
+        "dependencies": {
+          "Google.Apis": "1.61.0",
+          "Google.Apis.Auth": "1.61.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.YouTube.v3.dll": {
+            "assemblyVersion": "1.61.0.3155",
+            "fileVersion": "1.61.0.3155"
+          }
+        }
+      },
+      "Google.Apis.YouTubePartner.v1/1.35.1.1334": {
+        "dependencies": {
+          "Google.Apis": "1.61.0",
+          "Google.Apis.Auth": "1.61.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.YouTubePartner.v1.dll": {
+            "assemblyVersion": "1.35.1.1334",
+            "fileVersion": "1.35.1.1334"
+          }
+        }
+      },
+      "LibUsbDotNet/2.2.29": {
+        "dependencies": {
+          "Microsoft.Win32.Registry": "4.5.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/LibUsbDotNet.LibUsbDotNet.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.29.55645"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Primitives": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/7.0.0": {
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/2.0.0": {},
+      "Microsoft.Win32.Registry/4.5.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "4.5.0",
+          "System.Security.Principal.Windows": "4.5.0"
+        },
+        "runtime": {
+          "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/7.0.0": {
+        "runtime": {
+          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "NLog/5.2.3": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.2.3.1999"
+          }
+        }
+      },
+      "PKHeX.Core/23.8.23": {
+        "runtime": {
+          "lib/net7.0/PKHeX.Core.dll": {
+            "assemblyVersion": "23.8.23.0",
+            "fileVersion": "23.8.23.0"
+          }
+        }
+      },
+      "System.Collections.Immutable/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "7.0.0"
+        },
+        "runtime": {
+          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "System.Interactive.Async/5.0.0": {
+        "dependencies": {
+          "System.Linq.Async": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/System.Interactive.Async.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.1"
+          }
+        }
+      },
+      "System.Linq.Async/5.0.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/System.Linq.Async.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.1"
+          }
+        }
+      },
+      "System.Reactive/5.0.0": {
+        "runtime": {
+          "lib/net5.0/System.Reactive.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.1"
+          }
+        }
+      },
+      "System.Resources.Extensions/7.0.0": {
+        "runtime": {
+          "lib/net7.0/System.Resources.Extensions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "System.Security.AccessControl/4.5.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "System.Security.Principal.Windows": "4.5.0"
+        },
+        "runtime": {
+          "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "System.Security.Principal.Windows/4.5.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0"
+        },
+        "runtime": {
+          "runtimes/win/lib/netcoreapp2.0/System.Security.Principal.Windows.dll": {
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "System.ValueTuple/4.5.0": {},
+      "TwitchLib.Client/3.3.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
+          "TwitchLib.Client.Enums": "3.3.1",
+          "TwitchLib.Client.Models": "3.3.1",
+          "TwitchLib.Communication": "1.0.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/TwitchLib.Client.dll": {
+            "assemblyVersion": "3.3.1.0",
+            "fileVersion": "3.3.1.0"
+          }
+        }
+      },
+      "TwitchLib.Client.Enums/3.3.1": {
+        "runtime": {
+          "lib/netstandard2.0/TwitchLib.Client.Enums.dll": {
+            "assemblyVersion": "3.3.1.0",
+            "fileVersion": "3.3.1.0"
+          }
+        }
+      },
+      "TwitchLib.Client.Models/3.3.1": {
+        "dependencies": {
+          "TwitchLib.Client.Enums": "3.3.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/TwitchLib.Client.Models.dll": {
+            "assemblyVersion": "3.3.1.0",
+            "fileVersion": "3.3.1.0"
+          }
+        }
+      },
+      "TwitchLib.Communication/1.0.4": {
+        "runtime": {
+          "lib/netstandard2.0/TwitchLib.Communication.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Discord.Net/3.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ACCXwn/D27Lktg2X8Z43G8lofgwNcHkAnS64ZJ4Z+SuK9j5NVTFBo2jV2fi2OROivx21ZkVSKXLXs9Wrt8V5tw==",
+      "path": "discord.net/3.12.0",
+      "hashPath": "discord.net.3.12.0.nupkg.sha512"
+    },
+    "Discord.Net.Commands/3.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xsX/cL3jDJKBDQjSk3lk1mT6nWAPOJFQHYYmoCExGvKBKsAYc7YxxPIY1zlXCEkJ0OiU62swuuEZdGevTNK01Q==",
+      "path": "discord.net.commands/3.12.0",
+      "hashPath": "discord.net.commands.3.12.0.nupkg.sha512"
+    },
+    "Discord.Net.Core/3.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9MU124jnJYqfOt5nIGtpUZhQCFR6Ag2pB5KNDZRqZNMsKE2L3OkHuzDeD+iLSbOYYRPrbk+dfKOdnJZl+K1itA==",
+      "path": "discord.net.core/3.12.0",
+      "hashPath": "discord.net.core.3.12.0.nupkg.sha512"
+    },
+    "Discord.Net.Interactions/3.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FlfWqw3O56AAXbR5sc67E1vuRT0WScFlwE7+BdIAW5m/ziiQVTFuZLmUPnE5rnWSf4lcqeLx7UXFJknBGMr6uw==",
+      "path": "discord.net.interactions/3.12.0",
+      "hashPath": "discord.net.interactions.3.12.0.nupkg.sha512"
+    },
+    "Discord.Net.Rest/3.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lyp+1bVd4RnOmEMgM//yJ3zD7PZmT9tr6ljl/SPH66/kzlxex6kvlV7TyH7K93S0joKHzvGWm+lL0rEbkiFXPQ==",
+      "path": "discord.net.rest/3.12.0",
+      "hashPath": "discord.net.rest.3.12.0.nupkg.sha512"
+    },
+    "Discord.Net.Webhook/3.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0n8dh/WbuEvR4jptPsGXyCMLbhgRzEh1/pZpCcNcQSnDLYNB3EYH9KtMzjH4ykDBBsL2LNcwWWBKpXC77AG6nA==",
+      "path": "discord.net.webhook/3.12.0",
+      "hashPath": "discord.net.webhook.3.12.0.nupkg.sha512"
+    },
+    "Discord.Net.WebSocket/3.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bipottjJzE/yEc4CZmCURRboROuMqHQRGma7L+qYfv3VwNgb0+j2rxvawcY7Tr77EuX0EjnnNBGoKcdJClGYEQ==",
+      "path": "discord.net.websocket/3.12.0",
+      "hashPath": "discord.net.websocket.3.12.0.nupkg.sha512"
+    },
+    "Google.Apis/1.61.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KUVqG6MRC7E8anPOLefqb+wnDeIS6IJ1B09GaXg07vAHGVnGxJ8odAtpnCQCN3aUzao3gFnSSEKawDvFrJpYZQ==",
+      "path": "google.apis/1.61.0",
+      "hashPath": "google.apis.1.61.0.nupkg.sha512"
+    },
+    "Google.Apis.Auth/1.61.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1tXnTa9WaimJdlrIyHnhjjgFX6fQ1r4ClWqlK9ZYF5YPyswG1GbWhhlPyQg615BnHSulmRINlXIi8AbGJsc1yQ==",
+      "path": "google.apis.auth/1.61.0",
+      "hashPath": "google.apis.auth.1.61.0.nupkg.sha512"
+    },
+    "Google.Apis.Core/1.61.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/COXAFLc1SrLDZl7Ahhi0ZyNHM6ADvdd73UjIPXr1MRubHTrBgvdfwoTrCL0C8C6w0ur/RIR1RHUR5orSJozGg==",
+      "path": "google.apis.core/1.61.0",
+      "hashPath": "google.apis.core.1.61.0.nupkg.sha512"
+    },
+    "Google.Apis.YouTube.v3/1.61.0.3155": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YmjkIt03FKBVV/BjKGqHM0x6C4/hHuqIlIm+g+Vc0FCmWzNcxK9vGZtZWAFdD1CzsdKfNpCRdfUERo8bAWvgng==",
+      "path": "google.apis.youtube.v3/1.61.0.3155",
+      "hashPath": "google.apis.youtube.v3.1.61.0.3155.nupkg.sha512"
+    },
+    "Google.Apis.YouTubePartner.v1/1.35.1.1334": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fvJY45/r9oE5ZBqlCdEBWEorpDJOjXe0nZ4CdzS/+Qb92NLUeAK0QyEcqjDD8jXtuevLBpo+hZld7zf68LTD1w==",
+      "path": "google.apis.youtubepartner.v1/1.35.1.1334",
+      "hashPath": "google.apis.youtubepartner.v1.1.35.1.1334.nupkg.sha512"
+    },
+    "LibUsbDotNet/2.2.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kYXcaTDhoJlZP7yuh3yuBTYQxzw1p+QXpJnGRkdtGMq7Vy7NTD/DzBLnZR72gL7HEQUz+mpyRpq+ZOySwQb4Zw==",
+      "path": "libusbdotnet/2.2.29",
+      "hashPath": "libusbdotnet.2.2.29.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tldQUBWt/xeH2K7/hMPPo5g8zuLc3Ro9I5d4o/XrxvxOCA2EZBtW7bCHHTc49fcBtvB8tLAb/Qsmfrq+2SJ4vA==",
+      "path": "microsoft.extensions.configuration/7.0.0",
+      "hashPath": "microsoft.extensions.configuration.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f34u2eaqIjNO9YLHBz8rozVZ+TcFiFs0F3r7nUJd7FRkVSxk8u4OpoK226mi49MwexHOR2ibP9MFvRUaLilcQQ==",
+      "path": "microsoft.extensions.configuration.abstractions/7.0.0",
+      "hashPath": "microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-elNeOmkeX3eDVG6pYVeV82p29hr+UKDaBhrZyWvWLw/EVZSYEkZlQdkp0V39k/Xehs2Qa0mvoCvkVj3eQxNQ1Q==",
+      "path": "microsoft.extensions.dependencyinjection/7.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h3j/QfmFN4S0w4C2A6X7arXij/M/OVw3uQHSOFxnND4DyAzO1F9eMX7Eti7lU/OkSthEE0WzRsfT/Dmx86jzCw==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/7.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NxP6ahFcBnnSfwNBi2KH2Oz8Xl5Sm2krjId/jRR3I7teFphwiUoUeZPwTNA21EX+5PtjqmyAvKaOeBXcJjcH/w==",
+      "path": "microsoft.extensions.logging.abstractions/5.0.0",
+      "hashPath": "microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-um1KU5kxcRp3CNuI8o/GrZtD4AIOXDk+RLsytjZ9QPok3ttLUelLKpilVPuaFT3TFjOhSibUAso0odbOaCDj3Q==",
+      "path": "microsoft.extensions.primitives/7.0.0",
+      "hashPath": "microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+      "path": "microsoft.netcore.platforms/2.0.0",
+      "hashPath": "microsoft.netcore.platforms.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.Registry/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+FWlwd//+Tt56316p00hVePBCouXyEzT86Jb3+AuRotTND0IYn0OO3obs1gnQEs/txEnt+rF2JBGLItTG+Be6A==",
+      "path": "microsoft.win32.registry/4.5.0",
+      "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
+      "path": "microsoft.win32.systemevents/7.0.0",
+      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "NLog/5.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rHTNRtQF5qYqLutSR9ldUWXglKym/KA1R6GKw4JtDvza8i5+kgfmeKH75Ccn1noeJIOjHLXorphMxKk3EiN2tg==",
+      "path": "nlog/5.2.3",
+      "hashPath": "nlog.5.2.3.nupkg.sha512"
+    },
+    "PKHeX.Core/23.8.23": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Cqxn7CE1fgprvVE4zI2ZB2DzMhjTm9d9GQCtXCzLHbIEy2RqGNEbC8FY9Zrk8LiWquJWdhWGgeZfQMI5Ses0ug==",
+      "path": "pkhex.core/23.8.23",
+      "hashPath": "pkhex.core.23.8.23.nupkg.sha512"
+    },
+    "System.Collections.Immutable/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FXkLXiK0sVVewcso0imKQoOxjoPAj42R8HtjjbSjVPAzwDfzoyoznWxgA3c38LDbN9SJux1xXoXYAhz98j7r2g==",
+      "path": "system.collections.immutable/5.0.0",
+      "hashPath": "system.collections.immutable.5.0.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
+      "path": "system.drawing.common/7.0.0",
+      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
+    },
+    "System.Interactive.Async/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QaqhQVDiULcu4vm6o89+iP329HcK44cETHOYgy/jfEjtzeFy0ZxmuM7nel9ocjnKxEM4yh1mli7hgh8Q9o+/Iw==",
+      "path": "system.interactive.async/5.0.0",
+      "hashPath": "system.interactive.async.5.0.0.nupkg.sha512"
+    },
+    "System.Linq.Async/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cPtIuuH8TIjVHSi2ewwReWGW1PfChPE0LxPIDlfwVcLuTM9GANFTXiMB7k3aC4sk3f0cQU25LNKzx+jZMxijqw==",
+      "path": "system.linq.async/5.0.0",
+      "hashPath": "system.linq.async.5.0.0.nupkg.sha512"
+    },
+    "System.Reactive/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-erBZjkQHWL9jpasCE/0qKAryzVBJFxGHVBAvgRN1bzM0q2s1S4oYREEEL0Vb+1kA/6BKb5FjUZMp5VXmy+gzkQ==",
+      "path": "system.reactive/5.0.0",
+      "hashPath": "system.reactive.5.0.0.nupkg.sha512"
+    },
+    "System.Resources.Extensions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-65ufm9ABXvxRkQ//hMcUDrQXbGWkC7z0WWZAvHlQ6Qv+JmrIwHH1lmX8aXlNlXpIrT9KxDpuZPqJTVqqwzMD8Q==",
+      "path": "system.resources.extensions/7.0.0",
+      "hashPath": "system.resources.extensions.7.0.0.nupkg.sha512"
+    },
+    "System.Security.AccessControl/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vW8Eoq0TMyz5vAG/6ce483x/CP83fgm4SJe5P8Tb1tZaobcvPrbMEL7rhH1DRdrYbbb6F0vq3OlzmK0Pkwks5A==",
+      "path": "system.security.accesscontrol/4.5.0",
+      "hashPath": "system.security.accesscontrol.4.5.0.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-U77HfRXlZlOeIXd//Yoj6Jnk8AXlbeisf1oq1os+hxOGVnuG+lGSfGqTwTZBoORFF6j/0q7HXIl8cqwQ9aUGqQ==",
+      "path": "system.security.principal.windows/4.5.0",
+      "hashPath": "system.security.principal.windows.4.5.0.nupkg.sha512"
+    },
+    "System.ValueTuple/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "path": "system.valuetuple/4.5.0",
+      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
+    "TwitchLib.Client/3.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sLWISvgfF22XekeF8/WPh+BP3gvvq8n8b8vpqt4B79tYT8CfOMh07HhfPMge3YhZfWte1BN4DqLnpg6nXLReBw==",
+      "path": "twitchlib.client/3.3.1",
+      "hashPath": "twitchlib.client.3.3.1.nupkg.sha512"
+    },
+    "TwitchLib.Client.Enums/3.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vZQy5ZzrSObpbcRgf8LAnrmrOK4pGc8owsbeaJ3JK+PWFfnvo5mBdTp6kUt/3MO31cD+4E2buTIlPnyAA9lMMg==",
+      "path": "twitchlib.client.enums/3.3.1",
+      "hashPath": "twitchlib.client.enums.3.3.1.nupkg.sha512"
+    },
+    "TwitchLib.Client.Models/3.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v5wODXCF8xIjKs5hDXprpMI839ONNZ/i84ZOjrdjNN70QBa88EKeckLF4UwPoWX040ztvk4akPOsPyVWlWiwrg==",
+      "path": "twitchlib.client.models/3.3.1",
+      "hashPath": "twitchlib.client.models.3.3.1.nupkg.sha512"
+    },
+    "TwitchLib.Communication/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gq+s0JOFpcHbiuV17ggYCk8RycXo8kySUD1ZEkTC+hSoeSPyVqY4d5lM6tI87KliRuQd/vETmahBnetMXjjfQA==",
+      "path": "twitchlib.communication/1.0.4",
+      "hashPath": "twitchlib.communication.1.0.4.nupkg.sha512"
+    }
+  }
+}

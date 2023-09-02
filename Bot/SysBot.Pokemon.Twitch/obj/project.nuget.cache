@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "HvGaVQB5Ekvajfd27u9iis5ixLlTwUT6xthT+Mzaa/4n1rC0G4O/jPtIwcKLddEHvdYpuP3VcjradU5upiE57g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon.Twitch\\SysBot.Pokemon.Twitch.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rich\\.nuget\\packages\\libusbdotnet\\2.2.29\\libusbdotnet.2.2.29.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\nlog\\5.2.3\\nlog.5.2.3.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\pkhex.core\\23.8.23\\pkhex.core.23.8.23.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\twitchlib.client\\3.3.1\\twitchlib.client.3.3.1.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\twitchlib.client.enums\\3.3.1\\twitchlib.client.enums.3.3.1.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\twitchlib.client.models\\3.3.1\\twitchlib.client.models.3.3.1.nupkg.sha512",
+    "C:\\Users\\Rich\\.nuget\\packages\\twitchlib.communication\\1.0.4\\twitchlib.communication.1.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

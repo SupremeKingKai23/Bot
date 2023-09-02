@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <LangVersion>11</LangVersion>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU</Platforms>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <TargetFramework>net7.0</TargetFramework>
+    <NoWarn>CA1416, CS8604</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Discord.Net" Version="3.12.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="PKHeX.Core" Version="23.8.23" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+    <ProjectReference Include="..\SysBot.Base\SysBot.Base.csproj" />
+    <ProjectReference Include="..\SysBot.Pokemon\SysBot.Pokemon.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PKHeX.Core.AutoMod">
+      <HintPath>..\SysBot.Pokemon\deps\PKHeX.Core.AutoMod.dll</HintPath>
+    </Reference>
+    <Reference Include="PKHeX.Drawing.PokeSprite">
+      <HintPath>..\SysBot.Pokemon.WinForms\deps\PKHeX.Drawing.PokeSprite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
