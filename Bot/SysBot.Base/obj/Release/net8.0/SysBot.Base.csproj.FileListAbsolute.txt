@@ -1,0 +1,13 @@
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\bin\Release\net8.0\SysBot.Base.deps.json
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\bin\Release\net8.0\SysBot.Base.dll
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\bin\Release\net8.0\SysBot.Base.pdb
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\obj\Release\net8.0\SysBot.Base.csproj.AssemblyReference.cache
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\obj\Release\net8.0\SysBot.Base.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\obj\Release\net8.0\SysBot.Base.AssemblyInfoInputs.cache
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\obj\Release\net8.0\SysBot.Base.AssemblyInfo.cs
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\obj\Release\net8.0\SysBot.Base.csproj.CoreCompileInputs.cache
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\obj\Release\net8.0\SysBot.Base.sourcelink.json
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\obj\Release\net8.0\SysBot.Base.dll
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\obj\Release\net8.0\refint\SysBot.Base.dll
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\obj\Release\net8.0\SysBot.Base.pdb
+C:\Users\Rich\source\repos\MergeBot\SysBot.Base\obj\Release\net8.0\ref\SysBot.Base.dll

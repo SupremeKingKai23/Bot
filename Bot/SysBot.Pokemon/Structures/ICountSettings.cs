@@ -1,18 +1,17 @@
-﻿namespace SysBot.Pokemon
+﻿namespace SysBot.Pokemon;
+
+public interface ICountSettings
 {
-    public interface ICountSettings
-    {
-        bool EmitCountsOnStatusCheck { get; }
-        IEnumerable<string> GetNonZeroCounts();
-    }
+    bool EmitCountsOnStatusCheck { get; }
+    IEnumerable<string> GetNonZeroCounts();
+}
 
-    public interface ICountBot
-    {
-        public ICountSettings Counts { get; }
-    }
+public interface ICountBot
+{
+    public ICountSettings Counts { get; }
+}
 
-    public interface IEncounterBot : ICountBot
-    {
-        public void Acknowledge();
-    }
+public interface IEncounterBot : ICountBot
+{
+    public void Acknowledge();
 }

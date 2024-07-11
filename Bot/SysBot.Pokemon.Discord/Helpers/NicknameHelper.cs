@@ -1,5 +1,4 @@
-﻿using System;
-using Discord;
+﻿using Discord;
 
 namespace SysBot.Pokemon.Discord.Helpers;
 
@@ -7,9 +6,12 @@ public static class NicknameHelper
 {
     public static string Get(IGuildUser user)
     {
-        try {
+        try
+        {
             return user.DisplayName;
-        } catch (Exception _) {
+        }
+        catch
+        {
             return user.GlobalName;
         }
     }

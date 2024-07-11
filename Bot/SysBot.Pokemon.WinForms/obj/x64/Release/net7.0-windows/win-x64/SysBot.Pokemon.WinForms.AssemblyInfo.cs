@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Nintendo Switch Pokémon Bot Manager")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("01.00.00+230902185022")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("01.00.00+231217003121")]
 [assembly: System.Reflection.AssemblyProductAttribute("SysBot.Pokemon.WinForms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MergeBot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

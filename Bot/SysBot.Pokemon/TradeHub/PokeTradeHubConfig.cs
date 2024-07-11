@@ -2,64 +2,69 @@
 
 // ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
 
-namespace SysBot.Pokemon
+namespace SysBot.Pokemon;
+
+public sealed class PokeTradeHubConfig : BaseConfig
 {
-    public sealed class PokeTradeHubConfig : BaseConfig
-    {
-        private const string BotTrade = nameof(BotTrade);
-        private const string Integration = nameof(Integration);
+    private const string BotTrade = nameof(BotTrade);
+    private const string Integration = nameof(Integration);
 
-        [Browsable(false)]
-        public override bool Shuffled => Distribution.Shuffled;
+    [Browsable(false)]
+    public override bool Shuffled => Distribution.Shuffled;
 
-        [Category(FeatureToggle), Description("Set your Switch console language here for SWSH bots to work properly. All consoles should be using the same language.")]
-        public ConsoleLanguageParameter ConsoleLanguage { get; set; }
+    [Category(FeatureToggle), Description("Set your Switch console language here for SWSH bots to work properly. All consoles should be using the same language.")]
+    public ConsoleLanguageParameter ConsoleLanguage { get; set; }
 
-        [Category(Operation)]
-        [TypeConverter(typeof(ExpandableObjectConverter))]
-        public QueueSettings Queues { get; set; } = new();
+    [Category(Operation)]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    public QueueSettings Queues { get; set; } = new();
 
-        [Category(Operation), Description("Add extra time for slower Switches.")]
-        [TypeConverter(typeof(ExpandableObjectConverter))]
-        public TimingSettings Timings { get; set; } = new();
+    [Category(Operation), Description("Add extra time for slower Switches.")]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    public TimingSettings Timings { get; set; } = new();
 
-        // Trade Bots
-        public string DisplayedBotName => string.IsNullOrEmpty(BotName) ? "SysBot: Pokémon" : BotName;
-        [Category(BotTrade), Description("Name of the Discord/Twitch Bot the Program is Running. This will Title the window for easier recognition. Requires restart of program.")]
-        public string? BotName { get; set; }
+    [Category(BotTrade), Description("Name of the Discord/Twitch Bot the Program is Running. This will Title the window for easier recognition. Requires restart of program.")]
+    public string BotName { get; set; } = string.Empty;
 
-        [Category(BotTrade)]
-        [TypeConverter(typeof(ExpandableObjectConverter))]
-        public TradeSettings Trade { get; set; } = new();
+    [Category(BotTrade)]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    public TradeSettings Trade { get; set; } = new();
 
-        [Category(BotTrade), Description("Settings for idle distribution trades.")]
-        [TypeConverter(typeof(ExpandableObjectConverter))]
-        public DistributionSettings Distribution { get; set; } = new();
+    [Category(BotTrade)]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    public CountSettings Counts { get; set; } = new();
 
-        [Category(BotTrade)]
-        [TypeConverter(typeof(ExpandableObjectConverter))]
-        public TradeAbuseSettings TradeAbuse { get; set; } = new();
+    [Category(BotTrade), Description("Settings for idle distribution trades.")]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    public DistributionSettings Distribution { get; set; } = new();
 
-        // Integration
+    [Category(BotTrade)]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    public SeedCheckSettings SeedCheckSWSH { get; set; } = new();
 
-        [Category(Integration)]
-        [TypeConverter(typeof(ExpandableObjectConverter))]
-        public DiscordSettings Discord { get; set; } = new();
+    [Category(BotTrade)]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    public TradeAbuseSettings TradeAbuse { get; set; } = new();
 
-        [Category(Integration)]
-        [TypeConverter(typeof(ExpandableObjectConverter))]
-        public TwitchSettings Twitch { get; set; } = new();
+    // Integration
 
-        [Category(Integration)]
-        [TypeConverter(typeof(ExpandableObjectConverter))]
-        public YouTubeSettings YouTube { get; set; } = new();
+    [Category(Integration)]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    public DiscordSettings Discord { get; set; } = new();
 
-        [Category(Integration), Description("Configure generation of assets for streaming.")]
-        [TypeConverter(typeof(ExpandableObjectConverter))]
-        public StreamSettings Stream { get; set; } = new();
+    [Category(Integration)]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    public TwitchSettings Twitch { get; set; } = new();
 
-        [Category(Integration), Description("Allows favored users to join the queue with a more favorable position than unfavored users.")]
-        [TypeConverter(typeof(ExpandableObjectConverter))]
-        public FavoredPrioritySettings Favoritism { get; set; } = new();
-    }
+    [Category(Integration)]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    public YouTubeSettings YouTube { get; set; } = new();
+
+    [Category(Integration), Description("Configure generation of assets for streaming.")]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    public StreamSettings Stream { get; set; } = new();
+
+    [Category(Integration), Description("Allows favored users to join the queue with a more favorable position than unfavored users.")]
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    public FavoredPrioritySettings Favoritism { get; set; } = new();
 }

@@ -3,280 +3,2798 @@ using PKHeX.Core.AutoMod;
 using SysBot.Pokemon.Helpers;
 using System.Text.RegularExpressions;
 
-namespace SysBot.Pokemon
+namespace SysBot.Pokemon;
+
+public class TradeExtensions<T> where T : PKM, new()
 {
-    public class TradeExtensions<T> where T : PKM, new()
-    {        
-        public static readonly ushort[] ShinyLock = {  (ushort)Species.Victini, (ushort)Species.Keldeo, (ushort)Species.Volcanion, (ushort)Species.Cosmog, (ushort)Species.Cosmoem, (ushort)Species.Magearna, (ushort)Species.Marshadow, (ushort)Species.Eternatus,
-                                                    (ushort)Species.Kubfu, (ushort)Species.Urshifu, (ushort)Species.Zarude, (ushort)Species.Glastrier, (ushort)Species.Spectrier, (ushort)Species.Calyrex };
+    public static readonly ushort[] ShinyLock = [(ushort)Species.Victini,
+        (ushort)Species.Keldeo,
+        (ushort)Species.Volcanion,
+        (ushort)Species.Cosmog,
+        (ushort)Species.Cosmoem,
+        (ushort)Species.Magearna,
+        (ushort)Species.Marshadow,
+        (ushort)Species.Eternatus,
+        (ushort)Species.Kubfu,
+        (ushort)Species.Urshifu,
+        (ushort)Species.Zarude,
+        (ushort)Species.Glastrier,
+        (ushort)Species.Spectrier,
+        (ushort)Species.Calyrex];
 
-        public static bool ShinyLockCheck(ushort species, string form, string ball = "")
-        {
-            if (ShinyLock.Contains(species))
-                return true;
-            else if (form is not "" && (species is (ushort)Species.Zapdos or (ushort)Species.Moltres or (ushort)Species.Articuno))
-                return true;
-            else if (ball.Contains("Beast") && (species is (ushort)Species.Poipole or (ushort)Species.Naganadel))
-                return true;
-            else if (typeof(T) == typeof(PB8) && (species is (ushort)Species.Manaphy or (ushort)Species.Mew or (ushort)Species.Jirachi))
-                return true;
-            else if (species is (ushort)Species.Pikachu && form is not "" && form is not "-Partner")
-                return true;
-            else if ((species is (ushort)Species.Zacian or (ushort)Species.Zamazenta) && !ball.Contains("Cherish"))
-                return true;
-            return false;
-        }
-
-        public static bool HasAdName(T pk, out string ad)
-        {
-            string pattern = @"(YT$)|(YT\w*$)|(Lab$)|(\.\w*$|\.\w*\/)|(TV$)|(PKHeX)|(FB:)|(AuSLove)|(ShinyMart)|(Blainette)|(\ com)|(\ org)|(\ net)|(2DOS3)|(PPorg)|(Tik\wok$)|(YouTube)|(IG:)|(TTV\ )|(Tools)|(JokersWrath)|(bot$)|(PKMGen)|(TheHighTable)";
-            bool ot = Regex.IsMatch(pk.OT_Name, pattern, RegexOptions.IgnoreCase);
-            bool nick = Regex.IsMatch(pk.Nickname, pattern, RegexOptions.IgnoreCase);
-            ad = ot ? pk.OT_Name : nick ? pk.Nickname : "";
-            return ot || nick;
-        }
-
-        public static void DittoTrade(PKM pkm)
-        {
-            var dittoStats = new string[] { "atk", "spe", "spa" };
-            var nickname = pkm.Nickname.ToLower();
-            pkm.StatNature = pkm.Nature;
-            pkm.Met_Location = pkm switch
-            {
-                PB8 => 400,
-                PK9 => 28,
-                _   => 162, // PK8
-            };
-
-            pkm.Met_Level = pkm switch
-            {
-                PB8 => 29,
-                PK9 => 34,
-                _   => pkm.Met_Level,
-            };
-
-            if (pkm is PK9 pk9)
-            {
-                pk9.Obedience_Level = (byte)pk9.Met_Level;
-                pk9.TeraTypeOriginal = MoveType.Normal;
-                pk9.TeraTypeOverride = (MoveType)19;
-            }
-
-            pkm.Ball = 21;
-            pkm.IVs = new int[] { 31, nickname.Contains(dittoStats[0]) ? 0 : 31, 31, nickname.Contains(dittoStats[1]) ? 0 : 31, nickname.Contains(dittoStats[2]) ? 0 : 31, 31 };
-            pkm.ClearHyperTraining();
-            TrashBytes(pkm, new LegalityAnalysis(pkm));
-        }
-
-        public static void EggTrade(PKM pk, IBattleTemplate template)
-        {
-            pk.IsNicknamed = true;
-            pk.Nickname = pk.Language switch
-            {
-                1 => "タマゴ",
-                3 => "Œuf",
-                4 => "Uovo",
-                5 => "Ei",
-                7 => "Huevo",
-                8 => "알",
-                9 or 10 => "蛋",
-                _ => "Egg",
-            };
-
-            pk.IsEgg = true;
-            pk.Egg_Location = pk switch
-            {
-                PB8 => 60010,
-                PK9 => 30023,
-                _ => 60002, //PK8
-            };
-
-            pk.HeldItem = 0;
-            pk.CurrentLevel = 1;
-            pk.EXP = 0;
-            pk.Met_Level = 1;
-            pk.Met_Location = pk switch
-            {
-                PB8 => 65535,
-                PK9 => 0,
-                _ => 30002, //PK8
-            };
-
-            pk.CurrentHandler = 0;
-            pk.OT_Friendship = 1;
-            pk.HT_Name = "";
-            pk.HT_Friendship = 0;
-            pk.ClearMemories();
-            pk.StatNature = pk.Nature;
-            pk.SetEVs(new int[] { 0, 0, 0, 0, 0, 0 });
-
-            pk.SetMarking(0, 0);
-            pk.SetMarking(1, 0);
-            pk.SetMarking(2, 0);
-            pk.SetMarking(3, 0);
-            pk.SetMarking(4, 0);
-            pk.SetMarking(5, 0);
-
-            pk.ClearRelearnMoves();
-
-            if (pk is PK8 pk8)
-            {
-                pk8.HT_Language = 0;
-                pk8.HT_Gender = 0;
-                pk8.HT_Memory = 0;
-                pk8.HT_Feeling = 0;
-                pk8.HT_Intensity = 0;
-                pk8.DynamaxLevel = pk8.GetSuggestedDynamaxLevel(pk8, 0);
-            }
-            else if (pk is PB8 pb8)
-            {
-                pb8.HT_Language = 0;
-                pb8.HT_Gender = 0;
-                pb8.HT_Memory = 0;
-                pb8.HT_Feeling = 0;
-                pb8.HT_Intensity = 0;
-                pb8.DynamaxLevel = pb8.GetSuggestedDynamaxLevel(pb8, 0);
-            }
-            else if (pk is PK9 pk9)
-            {
-                pk9.HT_Language = 0;
-                pk9.HT_Gender = 0;
-                pk9.HT_Memory = 0;
-                pk9.HT_Feeling = 0;
-                pk9.HT_Intensity = 0;
-                pk9.Obedience_Level = 1;
-                pk9.Version = 0;
-                pk9.BattleVersion = 0;
-                pk9.TeraTypeOverride = (MoveType)19;
-            }
-
-            pk = TrashBytes(pk);
-            var la = new LegalityAnalysis(pk);
-            var enc = la.EncounterMatch;
-            pk.CurrentFriendship = EggStateLegality.GetMinimumEggHatchCycles(pk);
-
-            Span<ushort> relearn = stackalloc ushort[4];
-            la.GetSuggestedRelearnMoves(relearn, enc);
-            pk.SetRelearnMoves(relearn);
-
-            if (pk is ITechRecord t)
-            {
-                t.ClearRecordFlags();
-            }
-
-            pk.SetSuggestedMoves();
-
-            pk.Move1_PPUps = pk.Move2_PPUps = pk.Move3_PPUps = pk.Move4_PPUps = 0;
-            pk.SetMaximumPPCurrent(pk.Moves);
-            pk.ClearHyperTraining();
-            pk.SetSuggestedRibbons(template, enc);
-        }
-
-        public static PKM TrashBytes(PKM pkm, LegalityAnalysis? la = null)
-        {
-            var pk = (T)pkm.Clone();
-            var analysis = new LegalityAnalysis(pk);
-            var pkTrash = (T)pk.Clone();
-            if (analysis.Valid)
-            {
-                pkTrash.IsNicknamed = true;
-                pkTrash.Nickname = "KAIKAIKAIKAI";
-                pkTrash.SetDefaultNickname(la ?? new LegalityAnalysis(pkTrash));
-            }
-
-            if (new LegalityAnalysis(pkTrash).Valid)
-                pkm = pkTrash;
-            else if (analysis.Valid)
-                pkm = pk;
-            return pkm;
-        }
-
-        public static T CherishHandler(MysteryGift mg, ITrainerInfo info)
-        {
-            var result = EntityConverterResult.None;
-            var mgPkm = mg.ConvertToPKM(info);
-            bool canConvert = EntityConverter.IsConvertibleToFormat(mgPkm, info.Generation);
-            mgPkm = canConvert ? EntityConverter.ConvertToType(mgPkm, typeof(T), out result) : mgPkm;
-
-            if (mgPkm is not null && result is EntityConverterResult.Success)
-            {
-                var enc = new LegalityAnalysis(mgPkm).EncounterMatch;
-                mgPkm.SetHandlerandMemory(info, enc);
-
-                if (mgPkm.TID16 is 0 && mgPkm.SID16 is 0)
-                {
-                    mgPkm.TID16 = info.TID16;
-                    mgPkm.SID16 = info.SID16;
-                }
-
-                mgPkm.CurrentLevel = mg.LevelMin;
-                if (mgPkm.Species is (ushort)Species.Giratina && mgPkm.Form > 0)
-                    mgPkm.HeldItem = 112;
-                else if (mgPkm.Species is (ushort)Species.Silvally && mgPkm.Form > 0)
-                    mgPkm.HeldItem = mgPkm.Form + 903;
-                else mgPkm.HeldItem = 0;
-            }
-            else return new();
-
-            mgPkm = TrashBytes((T)mgPkm);
-            var la = new LegalityAnalysis(mgPkm);
-            if (!la.Valid)
-            {
-                mgPkm.SetRandomIVs(6);
-                var text = ShowdownParsing.GetShowdownText(mgPkm);
-                var set = new ShowdownSet(text);
-                var template = AutoLegalityWrapper.GetTemplate(set);
-                var pk = AutoLegalityWrapper.GetLegal(info, template, out _);
-                pk.SetAllTrainerData(info);
-                return (T)pk;
-            }
-            else return (T)mgPkm;
-        }
-
-        public static string PokeImg(PKM pkm, bool canGmax, bool fullSize)
-        {
-            bool md = false;
-            bool fd = false;
-            string[] baseLink;
-            if (fullSize)
-                baseLink = "https://raw.githubusercontent.com/BakaKaito/HomeImages/Home3.0/Sprites/512x512/poke_capture_0001_000_mf_n_00000000_f_n.png".Split('_');
-            else baseLink = "https://raw.githubusercontent.com/BakaKaito/HomeImages/Home3.0/Sprites/128x128/poke_capture_0001_000_mf_n_00000000_f_n.png".Split('_');
- 
-            if (Enum.IsDefined(typeof(GenderDependent), pkm.Species) && !canGmax && pkm.Form is 0 || (Species)pkm.Species == Species.Sneasel)
-            {
-                if (pkm.Gender is 0 && pkm.Species is not (ushort)Species.Torchic)
-                    md = true;
-                else fd = true;
-            }
-
-            int form = pkm.Species switch
-            {
-                (ushort)Species.Sinistea or (ushort)Species.Polteageist or (ushort)Species.Rockruff or (ushort)Species.Mothim => 0,
-                (ushort)Species.Alcremie when pkm.IsShiny || canGmax => 0,
-                _ => pkm.Form,
-            };
-
-            baseLink[2] = pkm.Species < 10 ? $"000{pkm.Species}" : pkm.Species < 100 && pkm.Species > 9 ? $"00{pkm.Species}" : pkm.Species < 1000 && pkm.Species > 99 ? $"0{pkm.Species}" : $"{pkm.Species}";
-            baseLink[3] = pkm.Form < 10 ? $"00{form}" : $"0{form}";
-            baseLink[4] = pkm.PersonalInfo.OnlyFemale ? Enum.IsDefined(typeof(FoToFd), pkm.Species) ? "fd" : "fo" : pkm.PersonalInfo.OnlyMale ? (pkm.Species == 128 && pkm.Form != 0 || Enum.IsDefined(typeof(MoToMd), pkm.Species)) ? "md" : "mo" : pkm.PersonalInfo.Genderless ? "uk" : fd ? "fd" : md ? "md" : "mf";
-            baseLink[5] = canGmax ? "g" : "n";
-            baseLink[6] = "0000000" + (pkm.Species is (ushort)Species.Alcremie && !canGmax ? pkm.Data[0xE4] : 0);
-            baseLink[8] = pkm.IsShiny ? "r.png" : "n.png";
-            return string.Join("_", baseLink);
-        }
-
-        public static string FormOutput(ushort species, byte form, out string[] formString)
-        {
-            var strings = GameInfo.GetStrings("en");
-            formString = FormConverter.GetFormList(species, strings.Types, strings.forms, GameInfo.GenderSymbolASCII, typeof(T) == typeof(PK8) ? EntityContext.Gen8 : EntityContext.Gen4);
-            if (formString.Length is 0)
-                return string.Empty;
-
-            formString[0] = "";
-            if (form >= formString.Length)
-                form = (byte)(formString.Length - 1);
-
-            return formString[form].Contains('-') ? formString[form] : formString[form] == "" ? "" : $"-{formString[form]}";
-        }
+    public static bool ShinyLockCheck(ushort species, string form, string ball = "")
+    {
+        if (ShinyLock.Contains(species))
+            return true;
+        else if (form is not "" && (species is (ushort)Species.Zapdos or (ushort)Species.Moltres or (ushort)Species.Articuno))
+            return true;
+        else if (ball.Contains("Beast") && (species is (ushort)Species.Poipole or (ushort)Species.Naganadel))
+            return true;
+        else if (typeof(T) == typeof(PB8) && (species is (ushort)Species.Manaphy or (ushort)Species.Mew or (ushort)Species.Jirachi))
+            return true;
+        else if (species is (ushort)Species.Pikachu && form is not "" && form is not "-Partner")
+            return true;
+        else if ((species is (ushort)Species.Zacian or (ushort)Species.Zamazenta) && !ball.Contains("Cherish"))
+            return true;
+        return false;
     }
+
+    public static bool HasAdName(T pk, out string ad)
+    {
+        string pattern = @"(YT$)|(YT\w*$)|(Lab$)|(\.\w*$|\.\w*\/)|(TV$)|(PKHeX)|(FB:)|(AuSLove)|(ShinyMart)|(Blainette)|(\ com)|(\ org)|(\ net)|(2DOS3)|(PPorg)|(Tik\wok$)|(YouTube)|(IG:)|(TTV\ )|(Tools)|(JokersWrath)|(bot$)|(PKMGen)|(TheHighTable)";
+        bool ot = Regex.IsMatch(pk.OriginalTrainerName, pattern, RegexOptions.IgnoreCase);
+        bool nick = Regex.IsMatch(pk.Nickname, pattern, RegexOptions.IgnoreCase);
+        ad = ot ? pk.OriginalTrainerName : nick ? pk.Nickname : "";
+        return ot || nick;
+    }
+
+    public static void DittoTrade(PKM pkm)
+    {
+        string[] dittoStats = ["atk", "spe", "spa"];
+        var nickname = pkm.Nickname.ToLower();
+        pkm.StatNature = pkm.Nature;
+        pkm.MetLocation = pkm switch
+        {
+            PB8 => 400,
+            PK9 => 28,
+            _ => 162, // PK8
+        };
+
+        pkm.MetLevel = pkm switch
+        {
+            PB8 => 29,
+            PK9 => 34,
+            _ => pkm.MetLevel,
+        };
+
+        if (pkm is PK9 pk9)
+        {
+            pk9.ObedienceLevel = pk9.MetLevel;
+            pk9.TeraTypeOriginal = MoveType.Normal;
+            pk9.TeraTypeOverride = (MoveType)19;
+        }
+
+        pkm.Ball = 21;
+        pkm.IVs = [31, nickname.Contains(dittoStats[0]) ? 0 : 31, 31, nickname.Contains(dittoStats[1]) ? 0 : 31, nickname.Contains(dittoStats[2]) ? 0 : 31, 31];
+        pkm.ClearHyperTraining();
+        TrashBytes(pkm, new LegalityAnalysis(pkm));
+    }
+
+    public static void EggTrade(PKM pk, IBattleTemplate template)
+    {
+        pk.IsNicknamed = true;
+        if (pk is PB8 pkbdsp)
+            pkbdsp.NicknameTrash.Clear();
+        pk.Nickname = pk.Language switch
+        {
+            1 => "タマゴ",
+            3 => "Œuf",
+            4 => "Uovo",
+            5 => "Ei",
+            7 => "Huevo",
+            8 => "알",
+            9 or 10 => "蛋",
+            _ => "Egg",
+        };
+
+        pk.IsEgg = true;
+        pk.EggLocation = pk switch
+        {
+            PB8 => 60010,
+            PK9 => 30023,
+            _ => 60002, //PK8
+        };
+
+        pk.HeldItem = 0;
+        pk.CurrentLevel = 1;
+        pk.EXP = 0;
+        pk.MetLevel = 1;
+        pk.MetLocation = pk switch
+        {
+            PB8 => 65535,
+            PK9 => 0,
+            _ => 30002, //PK8
+        };
+        pk.EggMonth = (byte)DateTime.Now.Month;
+        pk.EggDay = (byte)DateTime.Now.Day;
+        pk.EggYear = (byte)(DateTime.Now.Year % 100);
+        pk.MetMonth = (byte)DateTime.Now.Month;
+        pk.MetDay = (byte)DateTime.Now.Day;
+        pk.MetYear = (byte)(DateTime.Now.Year % 100);
+
+        pk.CurrentHandler = 0;
+        pk.OriginalTrainerFriendship = 1;
+        pk.HandlingTrainerName = "";
+        pk.HandlingTrainerFriendship = 0;
+        pk.HandlingTrainerTrash.Clear();
+        pk.ClearMemories();
+        pk.StatNature = pk.Nature;
+        pk.SetEVs([0, 0, 0, 0, 0, 0]);
+        pk.SetMarkings();
+        RibbonApplicator.RemoveAllValidRibbons(pk);
+        if (pk is IRibbonSetAffixed affixed)
+            affixed.AffixedRibbon = -1;
+        pk.ClearRelearnMoves();
+
+        if (pk is PK8 pk8)
+        {
+            pk8.HandlingTrainerLanguage = 0;
+            pk8.HandlingTrainerGender = 0;
+            pk8.HandlingTrainerMemory = 0;
+            pk8.HandlingTrainerMemoryFeeling = 0;
+            pk8.HandlingTrainerMemoryIntensity = 0;
+            pk8.DynamaxLevel = pk8.GetSuggestedDynamaxLevel(pk8, 0);
+        }
+        else if (pk is PB8 pb8)
+        {
+            pb8.HandlingTrainerLanguage = 0;
+            pb8.HandlingTrainerGender = 0;
+            pb8.HandlingTrainerMemory = 0;
+            pb8.HandlingTrainerMemoryFeeling = 0;
+            pb8.HandlingTrainerMemoryIntensity = 0;
+            pb8.DynamaxLevel = pb8.GetSuggestedDynamaxLevel(pb8, 0);
+        }
+        else if (pk is PK9 pk9)
+        {
+            pk9.HandlingTrainerLanguage = 0;
+            pk9.HandlingTrainerGender = 0;
+            pk9.HandlingTrainerMemory = 0;
+            pk9.HandlingTrainerMemoryFeeling = 0;
+            pk9.HandlingTrainerMemoryIntensity = 0;
+            pk9.ObedienceLevel = 1;
+            pk9.Version = 0;
+            pk9.BattleVersion = 0;
+            pk9.TeraTypeOverride = (MoveType)19;
+        }
+
+        pk = TrashBytes(pk);
+        var la = new LegalityAnalysis(pk);
+        var enc = la.EncounterMatch;
+        pk.CurrentFriendship = (byte)EggStateLegality.GetMinimumEggHatchCycles(pk);
+
+        Span<ushort> relearn = stackalloc ushort[4];
+        la.GetSuggestedRelearnMoves(relearn, enc);
+        pk.SetRelearnMoves(relearn);
+
+        if (pk is ITechRecord t)
+        {
+            t.ClearRecordFlags();
+        }
+
+        pk.SetSuggestedMoves();
+
+        pk.Move1_PPUps = pk.Move2_PPUps = pk.Move3_PPUps = pk.Move4_PPUps = 0;
+        pk.SetMaximumPPCurrent(pk.Moves);
+        pk.ClearHyperTraining();
+    }
+
+    public static T MysteryEgg(out T pkm)
+    {
+        bool foundValidSpecies = false;
+        Species randomSpecies = Species.None;
+
+        while (!foundValidSpecies)
+        {
+            Random random2 = new();
+            randomSpecies = (Species)CanHatchFromEgg.ElementAt(random2.Next(CanHatchFromEgg.Count));
+
+            var sav2 = AutoLegalityWrapper.GetTrainerInfo<T>();
+            var set2 = new ShowdownSet(randomSpecies.ToString());
+            var pkm2 = sav2.GetLegal(set2, out _);
+            var la = new LegalityAnalysis(pkm2);
+
+            if (la.Valid)
+            {
+                foundValidSpecies = true;
+            }
+        }
+
+        var content = randomSpecies.ToString();
+        content += "\n.IVs=$rand\n.Nature=$0,24\nShiny: Yes\n.Moves=$suggest\n.AbilityNumber=$0,2";
+        var set = new ShowdownSet(content);
+        var template = AutoLegalityWrapper.GetTemplate(set);
+        var sav = AutoLegalityWrapper.GetTrainerInfo<T>();
+        pkm = (T)sav.GetLegal(template, out _);
+
+        if (CanBeEgg(pkm.Species))
+        {
+            try
+            {
+                TradeExtensions<T>.EggTrade(pkm, template);
+                var la = new LegalityAnalysis(pkm);
+                var spec = GameInfo.Strings.Species[template.Species];
+                pkm = (T)(EntityConverter.ConvertToType(pkm, typeof(T), out _) ?? pkm);
+                pkm.ResetPartyStats();
+
+                return pkm;
+            }
+            catch
+            {
+            }
+        }
+
+        var set3 = new ShowdownSet("Magikarp\nShiny: Yes");
+        var template2 = AutoLegalityWrapper.GetTemplate(set3);
+        pkm = (T)sav.GetLegal(template2, out _);
+        TradeExtensions<T>.EggTrade(pkm, template);
+        pkm = (T)(EntityConverter.ConvertToType(pkm, typeof(T), out _) ?? pkm);
+
+        if ((Ball)pkm.Ball is Ball.Master or Ball.Cherish)
+            pkm.Ball = 4;
+        pkm.ResetPartyStats();
+
+        return pkm;
+    }
+
+    public static bool CanBeEgg(ushort species)
+    {
+        return CanHatchFromEgg.Contains(species);
+    }
+
+    public static PKM TrashBytes(PKM pkm, LegalityAnalysis? la = null)
+    {
+        var pk = (T)pkm.Clone();
+        var analysis = new LegalityAnalysis(pk);
+        var pkTrash = (T)pk.Clone();
+        if (analysis.Valid)
+        {
+            pkTrash.IsNicknamed = true;
+            pkTrash.SetDefaultNickname(la ?? new LegalityAnalysis(pkTrash));
+        }
+
+        if (new LegalityAnalysis(pkTrash).Valid)
+            pkm = pkTrash;
+        else if (analysis.Valid)
+            pkm = pk;
+        return pkm;
+    }
+
+    public static T CherishHandler(MysteryGift mg, ITrainerInfo info)
+    {
+        var result = EntityConverterResult.None;
+        var mgPkm = mg.ConvertToPKM(info);
+        bool canConvert = EntityConverter.IsConvertibleToFormat(mgPkm, info.Generation);
+        mgPkm = canConvert ? EntityConverter.ConvertToType(mgPkm, typeof(T), out result) : mgPkm;
+
+        if (mgPkm is not null && result is EntityConverterResult.Success)
+        {
+            if (mgPkm.TID16 is 0 && mgPkm.SID16 is 0)
+            {
+                mgPkm.TID16 = info.TID16;
+                mgPkm.SID16 = info.SID16;
+            }
+
+            mgPkm.CurrentLevel = mg.LevelMin;
+            if (mgPkm.Species is (ushort)Species.Giratina && mgPkm.Form > 0)
+                mgPkm.HeldItem = 112;
+            else if (mgPkm.Species is (ushort)Species.Silvally && mgPkm.Form > 0)
+                mgPkm.HeldItem = mgPkm.Form + 903;
+            else mgPkm.HeldItem = 0;
+        }
+        else return new();
+
+        mgPkm = TrashBytes((T)mgPkm);
+        var la = new LegalityAnalysis(mgPkm);
+        if (!la.Valid)
+        {
+            mgPkm.SetRandomIVs(6);
+            var text = ShowdownParsing.GetShowdownText(mgPkm);
+            var set = new ShowdownSet(text);
+            var template = AutoLegalityWrapper.GetTemplate(set);
+            var pk = AutoLegalityWrapper.GetLegal(info, template, out _);
+            pk.SetAllTrainerData(info);
+            return (T)pk;
+        }
+        else return (T)mgPkm;
+    }
+
+    public static string PokeImg(PKM pkm, bool canGmax = false, bool fullsize = false)
+    {
+        bool md = false;
+        bool fd = false;
+        string[] baseLink;
+        if (fullsize)
+            baseLink = "https://raw.githubusercontent.com/BakaKaito/HomeImages/Home3.0/Sprites/512x512/poke_capture_0001_000_mf_n_00000000_f_n.png".Split('_');
+        else baseLink = "https://raw.githubusercontent.com/BakaKaito/HomeImages/Home3.0/Sprites/128x128/poke_capture_0001_000_mf_n_00000000_f_n.png".Split('_');
+
+        if (Enum.IsDefined(typeof(GenderDependent), pkm.Species) && !canGmax && pkm.Form is 0 || (Species)pkm.Species == Species.Sneasel)
+        {
+            if (pkm.Gender is 0 && pkm.Species is not (ushort)Species.Torchic)
+                md = true;
+            else fd = true;
+        }
+
+        int form = pkm.Species switch
+        {
+            (ushort)Species.Sinistea or (ushort)Species.Polteageist or (ushort)Species.Rockruff or (ushort)Species.Mothim => 0,
+            (ushort)Species.Alcremie when pkm.IsShiny || canGmax => 0,
+            _ => pkm.Form,
+        };
+
+        baseLink[2] = pkm.Species < 10 ? $"000{pkm.Species}" : pkm.Species < 100 && pkm.Species > 9 ? $"00{pkm.Species}" : pkm.Species < 1000 && pkm.Species > 99 ? $"0{pkm.Species}" : $"{pkm.Species}";
+        baseLink[3] = pkm.Form < 10 ? $"00{form}" : $"0{form}";
+        baseLink[4] = pkm.PersonalInfo.OnlyFemale ? Enum.IsDefined(typeof(FoToFd), pkm.Species) ? "fd" : "fo" : pkm.PersonalInfo.OnlyMale ? (pkm.Species == 128 && pkm.Form != 0 || Enum.IsDefined(typeof(MoToMd), pkm.Species)) ? "md" : "mo" : pkm.PersonalInfo.Genderless ? "uk" : fd ? "fd" : md ? "md" : "mf";
+        baseLink[5] = canGmax ? "g" : "n";
+        var pkarg = pkm as IFormArgument;
+        baseLink[6] = "0000000" + (pkm.Species is (ushort)Species.Alcremie && !canGmax && pkarg != null ? pkarg.FormArgument : 0);
+        baseLink[8] = pkm.IsShiny ? "r.png" : "n.png";
+        return string.Join("_", baseLink);
+    }
+
+    public static string ItemImg(string item, bool smallsize)
+    {
+        string? baseLink;
+        if (smallsize)
+        {
+            baseLink = $"https://www.serebii.net/itemdex/sprites/{item}.png";
+        }
+        else baseLink = $"https://www.serebii.net/itemdex/sprites/sv/{item}.png";
+        return baseLink;
+    }
+
+    public static string RibbonImg(IRibbonIndex pk)
+    {
+        var Ribbon = string.Empty;
+        for (var mark = RibbonIndex.MarkLunchtime; mark < RibbonIndex.MarkSlump; mark++)
+        {
+            if (pk.GetRibbon((int)mark))
+                Ribbon = RibbonStrings.GetName($"Ribbon{mark}");
+        }
+        for (var mark = RibbonIndex.MarkJumbo; mark <= RibbonIndex.MarkMini; mark++)
+        {
+            if (pk.GetRibbon((int)mark))
+                Ribbon = RibbonStrings.GetName($"Ribbon{mark}");
+        }
+        for (var mark = RibbonIndex.MarkMightiest; mark <= RibbonIndex.MarkTitan; mark++)
+        {
+            if (pk.GetRibbon((int)mark))
+                Ribbon = RibbonStrings.GetName($"Ribbon{mark}");
+        }
+        var ribbon = Ribbon.Replace(" ", "").ToLower();
+        var baseLink = $"https://www.serebii.net/scarletviolet/ribbons/{ribbon}.png";
+        return baseLink;
+    }
+
+    public static string FormOutput(ushort species, byte form, out string[] formString)
+    {
+        var strings = GameInfo.GetStrings("en");
+        formString = FormConverter.GetFormList(species, strings.Types, strings.forms, GameInfo.GenderSymbolASCII, typeof(T) == typeof(PK8) ? EntityContext.Gen8 : EntityContext.Gen4);
+        if (formString.Length is 0)
+            return string.Empty;
+
+        formString[0] = "";
+        if (form >= formString.Length)
+            form = (byte)(formString.Length - 1);
+
+        return formString[form].Contains('-') ? formString[form] : formString[form] == "" ? "" : $"-{formString[form]}";
+    }
+
+    public static readonly HashSet<ushort> CanHatchFromEgg =
+        [
+            001,
+            004,
+            007,
+            010,
+            013,
+            016,
+            019,
+            021,
+            023,
+            027,
+            029,
+            032,
+            037,
+            039,
+            041,
+            043,
+            046,
+            048,
+            050,
+            052,
+            054,
+            056,
+            058,
+            060,
+            063,
+            066,
+            069,
+            072,
+            074,
+            077,
+            079,
+            081,
+            083,
+            084,
+            086,
+            088,
+            090,
+            092,
+            095,
+            096,
+            098,
+            100,
+            102,
+            104,
+            108,
+            109,
+            111,
+            114,
+            115,
+            116,
+            118,
+            120,
+            123,
+            126,
+            127,
+            128,
+            129,
+            131,
+            133,
+            137,
+            138,
+            140,
+            147,
+            142,
+            152,
+            155,
+            158,
+            161,
+            163,
+            165,
+            167,
+            170,
+            172,
+            173,
+            174,
+            175,
+            177,
+            179,
+            183,
+            187,
+            190,
+            191,
+            193,
+            194,
+            198,
+            200,
+            203,
+            204,
+            206,
+            207,
+            209,
+            211,
+            213,
+            214,
+            215,
+            216,
+            218,
+            220,
+            222,
+            223,
+            225,
+            227,
+            228,
+            231,
+            234,
+            235,
+            238,
+            239,
+            240,
+            241,
+            246,
+            252,
+            255,
+            258,
+            261,
+            263,
+            265,
+            270,
+            273,
+            276,
+            278,
+            280,
+            283,
+            285,
+            287,
+            290,
+            293,
+            296,
+            298,
+            299,
+            300,
+            302,
+            303,
+            304,
+            307,
+            309,
+            311,
+            312,
+            313,
+            314,
+            316,
+            318,
+            320,
+            322,
+            324,
+            325,
+            327,
+            328,
+            331,
+            333,
+            335,
+            337,
+            338,
+            339,
+            341,
+            343,
+            345,
+            347,
+            349,
+            351,
+            352,
+            353,
+            355,
+            357,
+            358,
+            359,
+            360,
+            361,
+            363,
+            366,
+            369,
+            370,
+            371,
+            374,
+            387,
+            390,
+            393,
+            396,
+            399,
+            401,
+            403,
+            406,
+            408,
+            410,
+            412,
+            415,
+            417,
+            418,
+            420,
+            422,
+            425,
+            427,
+            431,
+            433,
+            434,
+            436,
+            438,
+            439,
+            440,
+            441,
+            442,
+            443,
+            447,
+            449,
+            451,
+            453,
+            455,
+            456,
+            459,
+            479,
+            489,
+            495,
+            498,
+            501,
+            504,
+            506,
+            509,
+            511,
+            513,
+            515,
+            517,
+            519,
+            522,
+            524,
+            527,
+            529,
+            531,
+            532,
+            535,
+            538,
+            539,
+            540,
+            543,
+            546,
+            548,
+            550,
+            551,
+            554,
+            557,
+            559,
+            561,
+            562,
+            564,
+            566,
+            568,
+            570,
+            572,
+            574,
+            577,
+            580,
+            582,
+            585,
+            587,
+            590,
+            592,
+            595,
+            597,
+            599,
+            602,
+            605,
+            607,
+            610,
+            613,
+            615,
+            616,
+            618,
+            619,
+            621,
+            622,
+            624,
+            626,
+            627,
+            629,
+            631,
+            632,
+            633,
+            636,
+            650,
+            653,
+            656,
+            659,
+            661,
+            664,
+            667,
+            669,
+            672,
+            674,
+            677,
+            679,
+            682,
+            684,
+            686,
+            688,
+            690,
+            692,
+            694,
+            696,
+            698,
+            701,
+            702,
+            703,
+            704,
+            707,
+            708,
+            710,
+            712,
+            714,
+            722,
+            725,
+            728,
+            731,
+            734,
+            736,
+            738,
+            739,
+            742,
+            744,
+            746,
+            748,
+            749,
+            751,
+            753,
+            755,
+            757,
+            759,
+            761,
+            764,
+            765,
+            766,
+            767,
+            769,
+            771,
+            774,
+            775,
+            776,
+            777,
+            778,
+            779,
+            780,
+            781,
+            782,
+            810,
+            813,
+            816,
+            819,
+            821,
+            824,
+            827,
+            829,
+            831,
+            833,
+            835,
+            837,
+            840,
+            843,
+            845,
+            846,
+            848,
+            850,
+            852,
+            854,
+            856,
+            859,
+            868,
+            870,
+            871,
+            872,
+            874,
+            875,
+            876,
+            877,
+            878,
+            885,
+            906,
+            909,
+            912,
+            915,
+            917,
+            919,
+            921,
+            924,
+            926,
+            928,
+            931,
+            932,
+            935,
+            938,
+            940,
+            942,
+            944,
+            946,
+            948,
+            950,
+            951,
+            953,
+            955,
+            957,
+            960,
+            962,
+            963,
+            965,
+            967,
+            969,
+            971,
+            973,
+            974,
+            976,
+            978,
+            996,
+        ];
+
+    public static int[] LGPE = [
+        001,
+        002,
+        003,
+        004,
+        005,
+        006,
+        007,
+        008,
+        009,
+        010,
+        011,
+        012,
+        013,
+        014,
+        015,
+        016,
+        017,
+        018,
+        019,
+        020,
+        021,
+        022,
+        023,
+        024,
+        025,
+        026,
+        027,
+        028,
+        030,
+        031,
+        033,
+        034,
+        035,
+        036,
+        037,
+        038,
+        039,
+        040,
+        041,
+        042,
+        043,
+        044,
+        045,
+        046,
+        047,
+        048,
+        049,
+        050,
+        051,
+        052,
+        053,
+        054,
+        055,
+        056,
+        057,
+        058,
+        059,
+        060,
+        061,
+        062,
+        063,
+        064,
+        065,
+        066,
+        067,
+        068,
+        069,
+        070,
+        071,
+        072,
+        073,
+        074,
+        075,
+        076,
+        077,
+        078,
+        079,
+        080,
+        081,
+        082,
+        084,
+        085,
+        086,
+        087,
+        088,
+        089,
+        090,
+        091,
+        092,
+        093,
+        094,
+        095,
+        096,
+        097,
+        098,
+        099,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        808,
+        809];
+
+    public static int[] SWSH = [
+            001,
+        002,
+        003,
+        004,
+        005,
+        006,
+        007,
+        008,
+        009,
+        010,
+        011,
+        012,
+        025,
+        026,
+        027,
+        028,
+        030,
+        031,
+        033,
+        034,
+        035,
+        036,
+        037,
+        038,
+        039,
+        040,
+        041,
+        042,
+        043,
+        044,
+        045,
+        050,
+        051,
+        052,
+        053,
+        054,
+        055,
+        058,
+        059,
+        060,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        72,
+        73,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        98,
+        99,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        163,
+        164,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        182,
+        183,
+        184,
+        185,
+        186,
+        194,
+        195,
+        196,
+        197,
+        199,
+        202,
+        206,
+        208,
+        211,
+        212,
+        213,
+        214,
+        215,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        230,
+        233,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        263,
+        264,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        278,
+        279,
+        280,
+        281,
+        282,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        298,
+        302,
+        303,
+        304,
+        305,
+        306,
+        309,
+        310,
+        315,
+        318,
+        319,
+        320,
+        321,
+        324,
+        328,
+        329,
+        330,
+        333,
+        334,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348,
+        349,
+        350,
+        355,
+        356,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        369,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        403,
+        404,
+        405,
+        406,
+        407,
+        415,
+        416,
+        420,
+        421,
+        422,
+        423,
+        425,
+        426,
+        427,
+        428,
+        434,
+        435,
+        436,
+        437,
+        438,
+        440,
+        442,
+        443,
+        444,
+        445,
+        446,
+        447,
+        448,
+        449,
+        450,
+        451,
+        452,
+        453,
+        454,
+        458,
+        459,
+        460,
+        461,
+        462,
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        470,
+        471,
+        473,
+        475,
+        477,
+        478,
+        479,
+        480,
+        481,
+        482,
+        483,
+        484,
+        485,
+        486,
+        487,
+        488,
+        494,
+        506,
+        507,
+        508,
+        509,
+        510,
+        517,
+        518,
+        519,
+        520,
+        521,
+        524,
+        525,
+        526,
+        527,
+        528,
+        529,
+        530,
+        531,
+        532,
+        533,
+        534,
+        535,
+        536,
+        537,
+        538,
+        539,
+        543,
+        544,
+        545,
+        546,
+        547,
+        548,
+        549,
+        550,
+        551,
+        552,
+        553,
+        554,
+        555,
+        556,
+        557,
+        558,
+        559,
+        560,
+        561,
+        562,
+        563,
+        564,
+        565,
+        566,
+        567,
+        568,
+        569,
+        570,
+        571,
+        572,
+        573,
+        574,
+        575,
+        576,
+        577,
+        578,
+        579,
+        582,
+        583,
+        584,
+        587,
+        588,
+        589,
+        590,
+        591,
+        592,
+        593,
+        595,
+        596,
+        597,
+        598,
+        599,
+        600,
+        601,
+        605,
+        606,
+        607,
+        608,
+        609,
+        610,
+        611,
+        612,
+        613,
+        614,
+        615,
+        616,
+        617,
+        618,
+        619,
+        620,
+        621,
+        622,
+        623,
+        624,
+        625,
+        626,
+        627,
+        628,
+        629,
+        630,
+        631,
+        632,
+        633,
+        634,
+        635,
+        636,
+        637,
+        638,
+        639,
+        640,
+        641,
+        642,
+        643,
+        644,
+        645,
+        646,
+        647,
+        649,
+        659,
+        660,
+        661,
+        662,
+        663,
+        674,
+        675,
+        677,
+        678,
+        679,
+        680,
+        681,
+        682,
+        683,
+        684,
+        685,
+        686,
+        687,
+        688,
+        689,
+        690,
+        691,
+        692,
+        693,
+        694,
+        695,
+        696,
+        697,
+        698,
+        699,
+        700,
+        701,
+        702,
+        703,
+        704,
+        705,
+        706,
+        707,
+        708,
+        709,
+        710,
+        711,
+        712,
+        713,
+        714,
+        715,
+        716,
+        717,
+        718,
+        719,
+        721,
+        722,
+        723,
+        724,
+        725,
+        726,
+        727,
+        728,
+        729,
+        730,
+        736,
+        737,
+        738,
+        742,
+        743,
+        744,
+        745,
+        746,
+        747,
+        748,
+        749,
+        750,
+        751,
+        752,
+        753,
+        754,
+        755,
+        756,
+        757,
+        758,
+        759,
+        760,
+        761,
+        762,
+        763,
+        764,
+        765,
+        766,
+        767,
+        768,
+        769,
+        770,
+        771,
+        773,
+        776,
+        777,
+        778,
+        780,
+        781,
+        785,
+        786,
+        787,
+        788,
+        789,
+        790,
+        791,
+        792,
+        793,
+        794,
+        795,
+        796,
+        797,
+        798,
+        799,
+        800,
+        801,
+        802,
+        803,
+        804,
+        805,
+        806,
+        807,
+        808,
+        809,
+        810,
+        811,
+        812,
+        813,
+        814,
+        815,
+        816,
+        817,
+        818,
+        819,
+        820,
+        821,
+        822,
+        823,
+        824,
+        825,
+        826,
+        827,
+        828,
+        829,
+        830,
+        831,
+        832,
+        833,
+        834,
+        835,
+        836,
+        837,
+        838,
+        839,
+        840,
+        841,
+        842,
+        843,
+        844,
+        845,
+        846,
+        847,
+        848,
+        849,
+        850,
+        851,
+        852,
+        853,
+        854,
+        855,
+        856,
+        857,
+        858,
+        859,
+        860,
+        861,
+        862,
+        863,
+        864,
+        867,
+        868,
+        869,
+        870,
+        871,
+        872,
+        873,
+        874,
+        875,
+        876,
+        877,
+        878,
+        879,
+        880,
+        881,
+        882,
+        883,
+        884,
+        885,
+        886,
+        887,
+        888,
+        889,
+        890,
+        891,
+        892,
+        893,
+        894,
+        895,
+        896,
+        897,
+        898];
+
+    public static int[] BDSP = [
+            001,
+        002,
+        003,
+        004,
+        005,
+        006,
+        007,
+        008,
+        009,
+        010,
+        011,
+        012,
+        013,
+        014,
+        015,
+        016,
+        017,
+        018,
+        019,
+        020,
+        021,
+        022,
+        023,
+        024,
+        025,
+        026,
+        027,
+        028,
+        030,
+        031,
+        033,
+        034,
+        035,
+        036,
+        037,
+        038,
+        039,
+        040,
+        041,
+        042,
+        043,
+        044,
+        045,
+        046,
+        047,
+        048,
+        049,
+        050,
+        051,
+        052,
+        053,
+        054,
+        055,
+        056,
+        057,
+        058,
+        059,
+        060,
+        061,
+        062,
+        063,
+        064,
+        065,
+        066,
+        067,
+        068,
+        069,
+        070,
+        071,
+        072,
+        073,
+        074,
+        075,
+        076,
+        077,
+        078,
+        079,
+        080,
+        081,
+        082,
+        084,
+        085,
+        086,
+        087,
+        088,
+        089,
+        090,
+        091,
+        092,
+        093,
+        094,
+        095,
+        096,
+        097,
+        098,
+        099,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354,
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405,
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        423,
+        424,
+        425,
+        426,
+        427,
+        428,
+        429,
+        430,
+        431,
+        432,
+        433,
+        434,
+        435,
+        436,
+        437,
+        438,
+        440,
+        441,
+        442,
+        443,
+        444,
+        445,
+        446,
+        447,
+        448,
+        449,
+        450,
+        451,
+        452,
+        453,
+        454,
+        455,
+        456,
+        457,
+        458,
+        459,
+        460,
+        461,
+        462,
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472,
+        473,
+        475,
+        476,
+        477,
+        478,
+        479,
+        480,
+        481,
+        482,
+        483,
+        484,
+        485,
+        486,
+        487,
+        488,
+        489,
+        490,
+        491,
+        492,
+        493,
+    ];
+
+    public static int[] LA = [
+            025,
+        026,
+        035,
+        036,
+        037,
+        038,
+        041,
+        042,
+        046,
+        047,
+        054,
+        055,
+        063,
+        064,
+        065,
+        066,
+        067,
+        068,
+        072,
+        073,
+        074,
+        075,
+        076,
+        077,
+        078,
+        081,
+        082,
+        092,
+        093,
+        094,
+        095,
+        108,
+        111,
+        112,
+        113,
+        114,
+        123,
+        125,
+        126,
+        129,
+        130,
+        133,
+        134,
+        135,
+        136,
+        137,
+        143,
+        155,
+        156,
+        169,
+        172,
+        173,
+        175,
+        176,
+        185,
+        190,
+        193,
+        196,
+        197,
+        198,
+        200,
+        201,
+        207,
+        208,
+        212,
+        214,
+        215,
+        216,
+        217,
+        220,
+        221,
+        223,
+        224,
+        226,
+        233,
+        234,
+        239,
+        240,
+        242,
+        265,
+        266,
+        267,
+        268,
+        269,
+        280,
+        281,
+        282,
+        299,
+        315,
+        339,
+        340,
+        355,
+        356,
+        358,
+        361,
+        362,
+        363,
+        364,
+        365,
+        387,
+        388,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405,
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        423,
+        424,
+        425,
+        426,
+        427,
+        428,
+        429,
+        430,
+        431,
+        432,
+        433,
+        434,
+        435,
+        436,
+        437,
+        438,
+        440,
+        441,
+        442,
+        443,
+        444,
+        445,
+        446,
+        447,
+        448,
+        449,
+        450,
+        451,
+        452,
+        453,
+        454,
+        455,
+        456,
+        457,
+        458,
+        459,
+        460,
+        461,
+        462,
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472,
+        473,
+        475,
+        476,
+        477,
+        478,
+        479,
+        480,
+        481,
+        482,
+        483,
+        484,
+        485,
+        486,
+        487,
+        488,
+        489,
+        490,
+        491,
+        492,
+        493,
+        501,
+        502,
+        548,
+        627,
+        641,
+        642,
+        645,
+        700,
+        704,
+        712,
+        722,
+        723,
+        899,
+        900,
+        901,
+        902,
+        903,
+        904,
+        905,
+    ];
+
+    public static int[] SV = [
+            004,
+        005,
+        006,
+        025,
+        026,
+        039,
+        040,
+        048,
+        049,
+        050,
+        051,
+        052,
+        053,
+        054,
+        055,
+        056,
+        057,
+        058,
+        059,
+        079,
+        080,
+        081,
+        082,
+        088,
+        089,
+        090,
+        091,
+        092,
+        093,
+        094,
+        096,
+        097,
+        100,
+        101,
+        113,
+        123,
+        128,
+        129,
+        130,
+        132,
+        133,
+        134,
+        135,
+        136,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        155,
+        156,
+        157,
+        172,
+        174,
+        179,
+        180,
+        181,
+        183,
+        184,
+        185,
+        187,
+        188,
+        189,
+        191,
+        192,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        203,
+        204,
+        205,
+        206,
+        211,
+        212,
+        214,
+        215,
+        216,
+        217,
+        225,
+        228,
+        229,
+        231,
+        232,
+        234,
+        242,
+        246,
+        247,
+        248,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        296,
+        297,
+        298,
+        302,
+        307,
+        308,
+        316,
+        317,
+        322,
+        323,
+        324,
+        325,
+        326,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        339,
+        340,
+        353,
+        354,
+        357,
+        361,
+        362,
+        370,
+        371,
+        372,
+        373,
+        382,
+        383,
+        384,
+        396,
+        397,
+        398,
+        401,
+        402,
+        403,
+        404,
+        405,
+        415,
+        416,
+        417,
+        418,
+        419,
+        422,
+        423,
+        425,
+        426,
+        429,
+        430,
+        434,
+        435,
+        436,
+        437,
+        438,
+        440,
+        442,
+        443,
+        444,
+        445,
+        447,
+        448,
+        449,
+        450,
+        453,
+        454,
+        456,
+        457,
+        459,
+        460,
+        461,
+        462,
+        470,
+        471,
+        475,
+        478,
+        479,
+        480,
+        481,
+        482,
+        483,
+        484,
+        485,
+        487,
+        488,
+        493,
+        501,
+        502,
+        503,
+        548,
+        549,
+        550,
+        551,
+        552,
+        553,
+        570,
+        571,
+        574,
+        575,
+        576,
+        585,
+        586,
+        590,
+        591,
+        594,
+        602,
+        603,
+        604,
+        610,
+        611,
+        612,
+        613,
+        614,
+        615,
+        624,
+        625,
+        627,
+        628,
+        633,
+        634,
+        635,
+        636,
+        637,
+        641,
+        642,
+        645,
+        648,
+        650,
+        651,
+        652,
+        653,
+        654,
+        655,
+        656,
+        657,
+        658,
+        661,
+        662,
+        663,
+        664,
+        665,
+        666,
+        667,
+        668,
+        669,
+        670,
+        671,
+        672,
+        673,
+        690,
+        691,
+        692,
+        693,
+        700,
+        701,
+        702,
+        703,
+        704,
+        705,
+        706,
+        707,
+        712,
+        713,
+        714,
+        715,
+        719,
+        720,
+        721,
+        722,
+        723,
+        724,
+        734,
+        735,
+        739,
+        740,
+        741,
+        744,
+        745,
+        747,
+        748,
+        749,
+        750,
+        753,
+        754,
+        757,
+        758,
+        761,
+        762,
+        763,
+        765,
+        766,
+        769,
+        770,
+        775,
+        778,
+        779,
+        801,
+        810,
+        811,
+        812,
+        813,
+        814,
+        815,
+        816,
+        817,
+        818,
+        819,
+        820,
+        821,
+        822,
+        823,
+        833,
+        834,
+        837,
+        838,
+        839,
+        840,
+        841,
+        842,
+        843,
+        844,
+        846,
+        847,
+        848,
+        849,
+        854,
+        855,
+        856,
+        857,
+        858,
+        859,
+        860,
+        861,
+        863,
+        870,
+        871,
+        872,
+        873,
+        874,
+        875,
+        876,
+        878,
+        879,
+        885,
+        886,
+        887,
+        888,
+        889,
+        890,
+        891,
+        892,
+        893,
+        894,
+        895,
+        896,
+        897,
+        898,
+        899,
+        900,
+        901,
+        902,
+        903,
+        904,
+        905,
+        906,
+        907,
+        908,
+        909,
+        910,
+        911,
+        912,
+        913,
+        914,
+        915,
+        916,
+        917,
+        918,
+        919,
+        920,
+        921,
+        922,
+        923,
+        924,
+        925,
+        926,
+        927,
+        928,
+        929,
+        930,
+        931,
+        932,
+        933,
+        934,
+        935,
+        936,
+        937,
+        938,
+        939,
+        940,
+        941,
+        942,
+        943,
+        944,
+        945,
+        946,
+        947,
+        948,
+        949,
+        950,
+        951,
+        952,
+        953,
+        954,
+        955,
+        956,
+        957,
+        958,
+        959,
+        960,
+        961,
+        962,
+        963,
+        964,
+        965,
+        966,
+        967,
+        968,
+        969,
+        970,
+        971,
+        972,
+        973,
+        974,
+        975,
+        976,
+        977,
+        978,
+        979,
+        980,
+        981,
+        982,
+        983,
+        984,
+        985,
+        986,
+        987,
+        988,
+        989,
+        990,
+        991,
+        992,
+        993,
+        994,
+        995,
+        996,
+        997,
+        998,
+        999,
+        1000,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009,
+        1010,
+    ];
 }

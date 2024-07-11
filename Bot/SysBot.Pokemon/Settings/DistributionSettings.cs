@@ -2,64 +2,69 @@
 using SysBot.Base;
 using System.ComponentModel;
 
-namespace SysBot.Pokemon
+namespace SysBot.Pokemon;
+
+public class DistributionSettings : ISynchronizationSetting
 {
-    public class DistributionSettings : ISynchronizationSetting
+    private const string Distribute = nameof(Distribute);
+    private const string Synchronize = nameof(Synchronize);
+    public override string ToString() => "Distribution Trade Settings";
+
+    // Distribute
+
+    [Category(Distribute), Description("When enabled, idle LinkTrade bots will randomly distribute PKM files from the DistributeFolder.")]
+    public bool DistributeWhileIdle { get; set; } = false;
+
+    [Category(Distribute), Description("When enabled, idle LinkTrade bots will randomly distribute Mystery Eggs.")]
+    public bool DistributeWhileIdleME { get; set; } = false;
+
+    [Category(Distribute), Description("When enabled, the DistributionFolder will yield randomly rather than in the same sequence.")]
+    public bool Shuffled { get; set; }
+
+    [Category(Distribute), Description("When set to something other than None, the Random Trades will require this species in addition to the nickname match.")]
+    public Species LedySpecies { get; set; } = Species.None;
+
+    [Category(Distribute), Description("When set to true, Random Ledy nickname-swap trades will quit rather than trade a random entity from the pool.")]
+    public bool LedyQuitIfNoMatch { get; set; }
+
+    [Category(Distribute), Description("Distribution Trade Link Code.")]
+    public int TradeCode { get; set; } = 7196;
+
+    [Category(Distribute), Description("LGPE Distribution Picto Trade Code.")]
+    public LGPETradeCodeGenerator LGPETradeCode { get; set; } = new();
+
+    [Category(Distribute), Description("Distribution Trade Link Code uses the Min and Max range rather than the fixed trade code.")]
+    public bool RandomCode { get; set; }
+
+    [Category(Distribute), Description("Distributions Process Without Trade Codes in BDSP/SV.")]
+    public bool DistributeNoCode { get; set; } = false;
+
+    [Category(Distribute), Description("For BDSP, the distribution bot will go to a specific room and remain there until the bot is stopped.")]
+    public bool RemainInUnionRoomBDSP { get; set; } = true;
+
+    // Synchronize
+
+    [Category(Synchronize), Description("Link Trade: Using multiple distribution bots -- all bots will confirm their trade code at the same time. When Local, the bots will continue when all are at the barrier. When Remote, something else must signal the bots to continue.")]
+    public BotSyncOption SynchronizeBots { get; set; } = BotSyncOption.LocalSync;
+
+    [Category(Synchronize), Description("Link Trade: Using multiple distribution bots -- once all bots are ready to confirm trade code, the Hub will wait X milliseconds before releasing all bots.")]
+    public int SynchronizeDelayBarrier { get; set; }
+
+    [Category(Synchronize), Description("Link Trade: Using multiple distribution bots -- how long (seconds) a bot will wait for synchronization before continuing anyways.")]
+    public double SynchronizeTimeout { get; set; } = 90;
+
+    [Category(Distribute), TypeConverter(typeof(ExpandableObjectConverter))]
+    public class LGPETradeCodeGenerator
     {
-        private const string Distribute = nameof(Distribute);
-        private const string Synchronize = nameof(Synchronize);
-        public override string ToString() => "Distribution Trade Settings";
+        public override string ToString() => "LGPE Trade Code";
 
-        // Distribute
+        [Category(Distribute), Description("LGPE Distribution Picto Trade Code First Image")]
+        public PictoCodes Mon1 { get; set; } = PictoCodes.Pikachu;
 
-        [Category(Distribute), Description("When enabled, idle LinkTrade bots will randomly distribute PKM files from the DistributeFolder.")]
-        public bool DistributeWhileIdle { get; set; } = false;
+        [Category(Distribute), Description("LGPE Distribution Picto Trade Code Second Image")]
+        public PictoCodes Mon2 { get; set; } = PictoCodes.Pidgey;
 
-        [Category(Distribute), Description("When enabled, idle LinkTrade bots will randomly distribute Mystery Eggs.")]
-        public bool DistributeWhileIdleME { get; set; } = false;
-
-        [Category(Distribute), Description("When enabled, the DistributionFolder will yield randomly rather than in the same sequence.")]
-        public bool Shuffled { get; set; }
-
-        [Category(Distribute), Description("When set to something other than None, the Random Trades will require this species in addition to the nickname match.")]
-        public Species LedySpecies { get; set; } = Species.None;
-
-        [Category(Distribute), Description("When set to true, Random Ledy nickname-swap trades will quit rather than trade a random entity from the pool.")]
-        public bool LedyQuitIfNoMatch { get; set; }
-
-        [Category(Distribute), Description("Distribution Trade Link Code.")]
-        public int TradeCode { get; set; } = 7196;
-
-        [Category(Distribute), Description("LGPE Distribution Picto Trade Code. Choose any 3 sparated by commas: Pikachu, Eevee, Bulbasaur, Charmander, Squirtle, Pidgey, Caterpie, Rattata, Jigglypuff, or Diglett.")]
-        public string LGPETradeCode { get; set; } = "Pikachu, Pidgey, Diglett";
-
-        [Category(Distribute), Description("Distribution Trade Link Code uses the Min and Max range rather than the fixed trade code.")]
-        public bool RandomCode { get; set; }
-
-        [Category(Distribute), Description("For BDSP, the distribution bot will go to a specific room and remain there until the bot is stopped.")]
-        public bool RemainInUnionRoomBDSP { get; set; } = true;
-
-        // Synchronize
-
-        [Category(Synchronize), Description("Link Trade: Using multiple distribution bots -- all bots will confirm their trade code at the same time. When Local, the bots will continue when all are at the barrier. When Remote, something else must signal the bots to continue.")]
-        public BotSyncOption SynchronizeBots { get; set; } = BotSyncOption.LocalSync;
-
-        [Category(Synchronize), Description("Link Trade: Using multiple distribution bots -- once all bots are ready to confirm trade code, the Hub will wait X milliseconds before releasing all bots.")]
-        public int SynchronizeDelayBarrier { get; set; }
-
-        [Category(Synchronize), Description("Link Trade: Using multiple distribution bots -- how long (seconds) a bot will wait for synchronization before continuing anyways.")]
-        public double SynchronizeTimeout { get; set; } = 90;
-
-        public List<PictoCodes> GetLGPETradeCode()
-        {
-            var tradeCodeValues = LGPETradeCode.Split(',');
-            var code = new List<PictoCodes>();
-            foreach (var tradeCodeValue in tradeCodeValues)
-            {
-                var trimmedValue = tradeCodeValue.Trim();
-                code.Add((PictoCodes)Enum.Parse(typeof(PictoCodes), trimmedValue));
-            }
-            return code;
-        }
+        [Category(Distribute), Description("LGPE Distribution Picto Trade Code Third Image")]
+        public PictoCodes Mon3 { get; set; } = PictoCodes.Diglett;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using PKHeX.Core;
 using SysBot.Base;
+using SysBot.Pokemon.Z3;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +14,7 @@ namespace SysBot.Pokemon.WinForms
 {
     public sealed partial class Main : Form
     {
-        private readonly List<PokeBotState> Bots = new();
+        private readonly List<PokeBotState> Bots = [];
         private readonly IPokeBotRunner RunningEnvironment;
         private readonly ProgramConfig Config;
 
@@ -21,6 +22,7 @@ namespace SysBot.Pokemon.WinForms
         {
             InitializeComponent();
 
+            PokeTradeBotSWSH.SeedChecker = new Z3SeedSearchHandler<PK8>();
             if (File.Exists(Program.ConfigPath))
             {
                 var lines = File.ReadAllText(Program.ConfigPath);
@@ -43,7 +45,7 @@ namespace SysBot.Pokemon.WinForms
 
             RTB_Logs.MaxLength = 32_767; // character length
             LoadControls();
-            Text = $"{Config.Hub.DisplayedBotName} ({Config.Mode})";
+            Text = $"{(string.IsNullOrEmpty(Config.Hub.BotName) ? "MergeBot v9.9" : Config.Hub.BotName)} ({Config.Mode})";
             Task.Run(BotMonitor);
 
             InitUtil.InitializeStubs(Config.Mode);
@@ -97,39 +99,12 @@ namespace SysBot.Pokemon.WinForms
             CB_Protocol.DataSource = listP;
             CB_Protocol.SelectedIndex = (int)SwitchProtocol.WiFi; // default option
 
-            LogUtil.Forwarders.Add(AppendLog);
-        }
-
-        private void AppendLog(string message, string identity)
-        {
-            var line = $"[{DateTime.Now:HH:mm:ss}] - {identity}: {message}{Environment.NewLine}";
-            if (InvokeRequired)
-                Invoke((MethodInvoker)(() => UpdateLog(line)));
-            else
-                UpdateLog(line);
-        }
-
-        private readonly object _logLock = new();
-
-        private void UpdateLog(string line)
-        {
-            lock (_logLock)
-            {
-                // ghetto truncate
-                var rtb = RTB_Logs;
-                var text = rtb.Text;
-                var max = rtb.MaxLength;
-                if (text.Length + line.Length + 2 >= max)
-                    rtb.Text = text[(max / 4)..];
-
-                rtb.AppendText(line);
-                rtb.ScrollToCaret();
-            }
+            LogUtil.Forwarders.Add(new TextBoxForwarder(RTB_Logs));
         }
 
         private ProgramConfig GetCurrentConfiguration()
         {
-            Config.Bots = Bots.ToArray();
+            Config.Bots = [.. Bots];
             return Config;
         }
 
@@ -296,7 +271,7 @@ namespace SysBot.Pokemon.WinForms
         private void FLP_Bots_Resize(object sender, EventArgs e)
         {
             foreach (var c in FLP_Bots.Controls.OfType<BotController>())
-                c.Width = FLP_Bots.Width;
+                c.Width = FLP_Bots.Width - 5;
         }
 
         private void CB_Protocol_SelectedIndexChanged(object sender, EventArgs e)

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SysBot.Pokemon.Twitch")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+230902184936")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+231217003116")]
 [assembly: System.Reflection.AssemblyProductAttribute("SysBot.Pokemon.Twitch")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SysBot.Pokemon.Twitch")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

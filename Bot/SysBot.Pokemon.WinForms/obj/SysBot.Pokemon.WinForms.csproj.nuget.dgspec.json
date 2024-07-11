@@ -22,7 +22,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -30,8 +30,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -39,11 +39,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "LibUsbDotNet": {
               "target": "Package",
@@ -51,7 +56,7 @@
             },
             "NLog": {
               "target": "Package",
-              "version": "[5.2.3, )"
+              "version": "[5.3.2, )"
             }
           },
           "imports": [
@@ -70,12 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -97,7 +97,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -105,8 +105,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
               "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj": {
                 "projectPath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj"
@@ -121,31 +121,36 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Discord.Net": {
               "target": "Package",
-              "version": "[3.12.0, )"
+              "version": "[3.15.2, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[8.0.0, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[8.0.0, )"
             },
             "PKHeX.Core": {
               "target": "Package",
-              "version": "[23.8.23, )"
+              "version": "[24.7.3, )"
             },
             "System.Drawing.Common": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[8.0.6, )"
             }
           },
           "imports": [
@@ -164,12 +169,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -191,7 +191,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -199,8 +199,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
               "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj": {
                 "projectPath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj"
@@ -215,15 +215,20 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "PKHeX.Core": {
               "target": "Package",
-              "version": "[23.8.23, )"
+              "version": "[24.7.3, )"
             },
             "TwitchLib.Client": {
               "target": "Package",
@@ -246,12 +251,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -273,7 +273,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0-windows"
+          "net8.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -281,8 +281,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0-windows7.0": {
-            "targetAlias": "net7.0-windows",
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
             "projectReferences": {
               "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj": {
                 "projectPath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj"
@@ -296,6 +296,9 @@
               "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon.YouTube\\SysBot.Pokemon.YouTube.csproj": {
                 "projectPath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon.YouTube\\SysBot.Pokemon.YouTube.csproj"
               },
+              "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon.Z3\\SysBot.Pokemon.Z3.csproj": {
+                "projectPath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon.Z3\\SysBot.Pokemon.Z3.csproj"
+              },
               "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon\\SysBot.Pokemon.csproj": {
                 "projectPath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon\\SysBot.Pokemon.csproj"
               }
@@ -306,19 +309,24 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net7.0-windows7.0": {
-          "targetAlias": "net7.0-windows",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "dependencies": {
             "PKHeX.Core": {
               "target": "Package",
-              "version": "[23.8.23, )"
+              "version": "[24.7.3, )"
             },
             "System.Resources.Extensions": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -332,24 +340,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[7.0.7, 7.0.7]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
-              "version": "[7.0.7, 7.0.7]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[7.0.7, 7.0.7]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[7.0.7, 7.0.7]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -358,12 +348,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -385,7 +370,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -393,8 +378,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
               "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj": {
                 "projectPath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj"
@@ -409,27 +394,32 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Google.Apis": {
               "target": "Package",
-              "version": "[1.61.0, )"
+              "version": "[1.68.0, )"
             },
             "Google.Apis.Auth": {
               "target": "Package",
-              "version": "[1.61.0, )"
+              "version": "[1.68.0, )"
             },
             "Google.Apis.Core": {
               "target": "Package",
-              "version": "[1.61.0, )"
+              "version": "[1.68.0, )"
             },
             "Google.Apis.YouTube.v3": {
               "target": "Package",
-              "version": "[1.61.0.3155, )"
+              "version": "[1.68.0.3421, )"
             },
             "Google.Apis.YouTubePartner.v1": {
               "target": "Package",
@@ -437,7 +427,7 @@
             },
             "PKHeX.Core": {
               "target": "Package",
-              "version": "[23.8.23, )"
+              "version": "[24.7.3, )"
             }
           },
           "imports": [
@@ -456,12 +446,82 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon.Z3\\SysBot.Pokemon.Z3.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon.Z3\\SysBot.Pokemon.Z3.csproj",
+        "projectName": "SysBot.Pokemon.Z3",
+        "projectPath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon.Z3\\SysBot.Pokemon.Z3.csproj",
+        "packagesPath": "C:\\Users\\Rich\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon.Z3\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Rich\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon\\SysBot.Pokemon.csproj": {
+                "projectPath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Pokemon\\SysBot.Pokemon.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "PKHeX.Core": {
+              "target": "Package",
+              "version": "[24.7.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -483,7 +543,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -491,8 +551,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
               "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj": {
                 "projectPath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj"
@@ -504,11 +564,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -516,11 +581,11 @@
             },
             "PKHeX.Core": {
               "target": "Package",
-              "version": "[23.8.23, )"
+              "version": "[24.7.3, )"
             },
             "System.Drawing.Common": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[8.0.6, )"
             }
           },
           "imports": [
@@ -539,12 +604,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

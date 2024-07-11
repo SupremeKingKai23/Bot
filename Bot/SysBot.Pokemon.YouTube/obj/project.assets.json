@@ -1,71 +1,70 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
-      "Google.Apis/1.61.0": {
+    "net8.0": {
+      "Google.Apis/1.68.0": {
         "type": "package",
         "dependencies": {
-          "Google.Apis.Core": "1.61.0"
+          "Google.Apis.Core": "1.68.0"
         },
         "compile": {
-          "lib/netstandard2.0/Google.Apis.dll": {
+          "lib/net6.0/Google.Apis.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Google.Apis.dll": {
+          "lib/net6.0/Google.Apis.dll": {
             "related": ".pdb;.xml"
           }
         }
       },
-      "Google.Apis.Auth/1.61.0": {
+      "Google.Apis.Auth/1.68.0": {
         "type": "package",
         "dependencies": {
-          "Google.Apis": "1.61.0",
-          "Google.Apis.Core": "1.61.0"
+          "Google.Apis": "1.68.0",
+          "Google.Apis.Core": "1.68.0",
+          "System.Management": "7.0.2"
         },
         "compile": {
-          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
-          "lib/netstandard2.0/Google.Apis.Auth.dll": {
+          "lib/net6.0/Google.Apis.Auth.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
-          "lib/netstandard2.0/Google.Apis.Auth.dll": {
+          "lib/net6.0/Google.Apis.Auth.dll": {
             "related": ".pdb;.xml"
           }
         }
       },
-      "Google.Apis.Core/1.61.0": {
+      "Google.Apis.Core/1.68.0": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3"
         },
         "compile": {
-          "lib/netstandard2.0/Google.Apis.Core.dll": {
+          "lib/net6.0/Google.Apis.Core.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Google.Apis.Core.dll": {
+          "lib/net6.0/Google.Apis.Core.dll": {
             "related": ".pdb;.xml"
           }
         }
       },
-      "Google.Apis.YouTube.v3/1.61.0.3155": {
+      "Google.Apis.YouTube.v3/1.68.0.3421": {
         "type": "package",
         "dependencies": {
-          "Google.Apis": "1.61.0",
-          "Google.Apis.Auth": "1.61.0"
+          "Google.Apis": "1.68.0",
+          "Google.Apis.Auth": "1.68.0"
         },
         "compile": {
-          "lib/netstandard2.0/Google.Apis.YouTube.v3.dll": {
+          "lib/net6.0/Google.Apis.YouTube.v3.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Google.Apis.YouTube.v3.dll": {
+          "lib/net6.0/Google.Apis.YouTube.v3.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -137,15 +136,15 @@
           }
         }
       },
-      "Microsoft.Win32.SystemEvents/7.0.0": {
+      "Microsoft.Win32.SystemEvents/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
@@ -153,7 +152,7 @@
           "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+          "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -172,7 +171,7 @@
           }
         }
       },
-      "NLog/5.2.3": {
+      "NLog/5.3.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/NLog.dll": {
@@ -185,27 +184,62 @@
           }
         }
       },
-      "PKHeX.Core/23.8.23": {
+      "PKHeX.Core/24.7.3": {
         "type": "package",
         "compile": {
-          "lib/net7.0/PKHeX.Core.dll": {}
+          "lib/net8.0/PKHeX.Core.dll": {}
         },
         "runtime": {
-          "lib/net7.0/PKHeX.Core.dll": {}
+          "lib/net8.0/PKHeX.Core.dll": {}
         }
       },
-      "System.Drawing.Common/7.0.0": {
+      "System.CodeDom/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Drawing.Common/8.0.6": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "7.0.0"
+          "Microsoft.Win32.SystemEvents": "8.0.0"
         },
         "compile": {
-          "lib/net7.0/System.Drawing.Common.dll": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Management/7.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.CodeDom": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/System.Management.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/System.Drawing.Common.dll": {
+          "lib/net7.0/System.Management.dll": {
             "related": ".xml"
           }
         },
@@ -213,7 +247,7 @@
           "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
+          "runtimes/win/lib/net7.0/System.Management.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -266,10 +300,10 @@
       },
       "SysBot.Base/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "LibUsbDotNet": "2.2.29",
-          "NLog": "5.2.3"
+          "NLog": "5.3.2"
         },
         "compile": {
           "bin/placeholder/SysBot.Base.dll": {}
@@ -280,268 +314,12 @@
       },
       "SysBot.Pokemon/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
-          "PKHeX.Core": "23.8.23",
+          "PKHeX.Core": "24.7.3",
           "SysBot.Base": "1.0.0",
-          "System.Drawing.Common": "7.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SysBot.Pokemon.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SysBot.Pokemon.dll": {}
-        }
-      }
-    },
-    "net7.0/win-x64": {
-      "Google.Apis/1.61.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis.Core": "1.61.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Google.Apis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Google.Apis.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Auth/1.61.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis": "1.61.0",
-          "Google.Apis.Core": "1.61.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
-          "lib/netstandard2.0/Google.Apis.Auth.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
-          "lib/netstandard2.0/Google.Apis.Auth.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Core/1.61.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/Google.Apis.Core.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Google.Apis.Core.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.YouTube.v3/1.61.0.3155": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis": "1.61.0",
-          "Google.Apis.Auth": "1.61.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Google.Apis.YouTube.v3.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Google.Apis.YouTube.v3.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.YouTubePartner.v1/1.35.1.1334": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis": "1.35.1",
-          "Google.Apis.Auth": "1.35.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/Google.Apis.YouTubePartner.v1.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Google.Apis.YouTubePartner.v1.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "LibUsbDotNet/2.2.29": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Win32.Registry": "4.5.0"
-        },
-        "compile": {
-          "lib/netcoreapp2.0/LibUsbDotNet.LibUsbDotNet.dll": {
-            "related": ".pdb"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/LibUsbDotNet.LibUsbDotNet.dll": {
-            "related": ".pdb"
-          }
-        }
-      },
-      "Microsoft.NETCore.Platforms/2.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/_._": {}
-        }
-      },
-      "Microsoft.Win32.Registry/4.5.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Security.AccessControl": "4.5.0",
-          "System.Security.Principal.Windows": "4.5.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
-        }
-      },
-      "Microsoft.Win32.SystemEvents/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "NLog/5.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/NLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/NLog.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "PKHeX.Core/23.8.23": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/PKHeX.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net7.0/PKHeX.Core.dll": {}
-        }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Win32.SystemEvents": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Security.AccessControl/4.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0",
-          "System.Security.Principal.Windows": "4.5.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Security.AccessControl.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {}
-        }
-      },
-      "System.Security.Principal.Windows/4.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Security.Principal.Windows.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/netcoreapp2.0/System.Security.Principal.Windows.dll": {}
-        }
-      },
-      "SysBot.Base/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "LibUsbDotNet": "2.2.29",
-          "NLog": "5.2.3"
-        },
-        "compile": {
-          "bin/placeholder/SysBot.Base.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SysBot.Base.dll": {}
-        }
-      },
-      "SysBot.Pokemon/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3",
-          "PKHeX.Core": "23.8.23",
-          "SysBot.Base": "1.0.0",
-          "System.Drawing.Common": "7.0.0"
+          "System.Drawing.Common": "8.0.6"
         },
         "compile": {
           "bin/placeholder/SysBot.Pokemon.dll": {}
@@ -553,97 +331,89 @@
     }
   },
   "libraries": {
-    "Google.Apis/1.61.0": {
-      "sha512": "KUVqG6MRC7E8anPOLefqb+wnDeIS6IJ1B09GaXg07vAHGVnGxJ8odAtpnCQCN3aUzao3gFnSSEKawDvFrJpYZQ==",
+    "Google.Apis/1.68.0": {
+      "sha512": "s2MymhdpH+ybZNBeZ2J5uFgFHApBp+QXf9FjZSdM1lk/vx5VqIknJwnaWiuAzXxPrLEkesX0Q+UsiWn39yZ9zw==",
       "type": "package",
-      "path": "google.apis/1.61.0",
+      "path": "google.apis/1.68.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
-        "google.apis.1.61.0.nupkg.sha512",
+        "google.apis.1.68.0.nupkg.sha512",
         "google.apis.nuspec",
-        "lib/net45/Google.Apis.PlatformServices.dll",
-        "lib/net45/Google.Apis.dll",
-        "lib/net45/Google.Apis.pdb",
-        "lib/net45/Google.Apis.xml",
-        "lib/netstandard1.3/Google.Apis.dll",
-        "lib/netstandard1.3/Google.Apis.pdb",
-        "lib/netstandard1.3/Google.Apis.xml",
+        "lib/net462/Google.Apis.dll",
+        "lib/net462/Google.Apis.pdb",
+        "lib/net462/Google.Apis.xml",
+        "lib/net6.0/Google.Apis.dll",
+        "lib/net6.0/Google.Apis.pdb",
+        "lib/net6.0/Google.Apis.xml",
         "lib/netstandard2.0/Google.Apis.dll",
         "lib/netstandard2.0/Google.Apis.pdb",
         "lib/netstandard2.0/Google.Apis.xml"
       ]
     },
-    "Google.Apis.Auth/1.61.0": {
-      "sha512": "1tXnTa9WaimJdlrIyHnhjjgFX6fQ1r4ClWqlK9ZYF5YPyswG1GbWhhlPyQg615BnHSulmRINlXIi8AbGJsc1yQ==",
+    "Google.Apis.Auth/1.68.0": {
+      "sha512": "hFx8Qz5bZ4w0hpnn4tSmZaaFpjAMsgVElZ+ZgVLUZ2r9i+AKcoVgwiNfv1pruNS5cCvpXqhKECbruBCfRezPHA==",
       "type": "package",
-      "path": "google.apis.auth/1.61.0",
+      "path": "google.apis.auth/1.68.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
-        "google.apis.auth.1.61.0.nupkg.sha512",
+        "google.apis.auth.1.68.0.nupkg.sha512",
         "google.apis.auth.nuspec",
-        "lib/net45/Google.Apis.Auth.PlatformServices.dll",
-        "lib/net45/Google.Apis.Auth.dll",
-        "lib/net45/Google.Apis.Auth.pdb",
-        "lib/net45/Google.Apis.Auth.xml",
-        "lib/net461/Google.Apis.Auth.PlatformServices.dll",
-        "lib/net461/Google.Apis.Auth.dll",
-        "lib/net461/Google.Apis.Auth.pdb",
-        "lib/net461/Google.Apis.Auth.xml",
-        "lib/netstandard1.3/Google.Apis.Auth.PlatformServices.dll",
-        "lib/netstandard1.3/Google.Apis.Auth.dll",
-        "lib/netstandard1.3/Google.Apis.Auth.pdb",
-        "lib/netstandard1.3/Google.Apis.Auth.xml",
-        "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll",
+        "lib/net462/Google.Apis.Auth.dll",
+        "lib/net462/Google.Apis.Auth.pdb",
+        "lib/net462/Google.Apis.Auth.xml",
+        "lib/net6.0/Google.Apis.Auth.dll",
+        "lib/net6.0/Google.Apis.Auth.pdb",
+        "lib/net6.0/Google.Apis.Auth.xml",
         "lib/netstandard2.0/Google.Apis.Auth.dll",
         "lib/netstandard2.0/Google.Apis.Auth.pdb",
         "lib/netstandard2.0/Google.Apis.Auth.xml"
       ]
     },
-    "Google.Apis.Core/1.61.0": {
-      "sha512": "/COXAFLc1SrLDZl7Ahhi0ZyNHM6ADvdd73UjIPXr1MRubHTrBgvdfwoTrCL0C8C6w0ur/RIR1RHUR5orSJozGg==",
+    "Google.Apis.Core/1.68.0": {
+      "sha512": "pAqwa6pfu53UXCR2b7A/PAPXeuVg6L1OFw38WckN27NU2+mf+KTjoEg2YGv/f0UyKxzz7DxF1urOTKg/6dTP9g==",
       "type": "package",
-      "path": "google.apis.core/1.61.0",
+      "path": "google.apis.core/1.68.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
-        "google.apis.core.1.61.0.nupkg.sha512",
+        "google.apis.core.1.68.0.nupkg.sha512",
         "google.apis.core.nuspec",
-        "lib/net45/Google.Apis.Core.dll",
-        "lib/net45/Google.Apis.Core.pdb",
-        "lib/net45/Google.Apis.Core.xml",
-        "lib/netstandard1.3/Google.Apis.Core.dll",
-        "lib/netstandard1.3/Google.Apis.Core.pdb",
-        "lib/netstandard1.3/Google.Apis.Core.xml",
+        "lib/net462/Google.Apis.Core.dll",
+        "lib/net462/Google.Apis.Core.pdb",
+        "lib/net462/Google.Apis.Core.xml",
+        "lib/net6.0/Google.Apis.Core.dll",
+        "lib/net6.0/Google.Apis.Core.pdb",
+        "lib/net6.0/Google.Apis.Core.xml",
         "lib/netstandard2.0/Google.Apis.Core.dll",
         "lib/netstandard2.0/Google.Apis.Core.pdb",
         "lib/netstandard2.0/Google.Apis.Core.xml"
       ]
     },
-    "Google.Apis.YouTube.v3/1.61.0.3155": {
-      "sha512": "YmjkIt03FKBVV/BjKGqHM0x6C4/hHuqIlIm+g+Vc0FCmWzNcxK9vGZtZWAFdD1CzsdKfNpCRdfUERo8bAWvgng==",
+    "Google.Apis.YouTube.v3/1.68.0.3421": {
+      "sha512": "ToAWh6fpLCFO3iFLbCfRTY9MJp+gjJwPOF156e5i8FhcuWyAjXweLM3a541LWFB2cm+jfAZD0qKWnttZkU+EKQ==",
       "type": "package",
-      "path": "google.apis.youtube.v3/1.61.0.3155",
+      "path": "google.apis.youtube.v3/1.68.0.3421",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
-        "google.apis.youtube.v3.1.61.0.3155.nupkg.sha512",
+        "google.apis.youtube.v3.1.68.0.3421.nupkg.sha512",
         "google.apis.youtube.v3.nuspec",
-        "lib/net45/Google.Apis.YouTube.v3.dll",
-        "lib/net45/Google.Apis.YouTube.v3.pdb",
-        "lib/net45/Google.Apis.YouTube.v3.xml",
-        "lib/netstandard1.3/Google.Apis.YouTube.v3.dll",
-        "lib/netstandard1.3/Google.Apis.YouTube.v3.pdb",
-        "lib/netstandard1.3/Google.Apis.YouTube.v3.xml",
+        "lib/net462/Google.Apis.YouTube.v3.dll",
+        "lib/net462/Google.Apis.YouTube.v3.pdb",
+        "lib/net462/Google.Apis.YouTube.v3.xml",
+        "lib/net6.0/Google.Apis.YouTube.v3.dll",
+        "lib/net6.0/Google.Apis.YouTube.v3.pdb",
+        "lib/net6.0/Google.Apis.YouTube.v3.xml",
         "lib/netstandard2.0/Google.Apis.YouTube.v3.dll",
         "lib/netstandard2.0/Google.Apis.YouTube.v3.pdb",
         "lib/netstandard2.0/Google.Apis.YouTube.v3.xml"
@@ -751,10 +521,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.Win32.SystemEvents/7.0.0": {
-      "sha512": "2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
+    "Microsoft.Win32.SystemEvents/8.0.0": {
+      "sha512": "9opKRyOKMCi2xJ7Bj7kxtZ1r9vbzosMvRrdEhVhDz8j8MoBGgB+WmC94yH839NPH+BclAjtQ/pyagvi/8gDLkw==",
       "type": "package",
-      "path": "microsoft.win32.systemevents/7.0.0",
+      "path": "microsoft.win32.systemevents/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -771,14 +541,18 @@
         "lib/net6.0/Microsoft.Win32.SystemEvents.xml",
         "lib/net7.0/Microsoft.Win32.SystemEvents.dll",
         "lib/net7.0/Microsoft.Win32.SystemEvents.xml",
+        "lib/net8.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net8.0/Microsoft.Win32.SystemEvents.xml",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+        "microsoft.win32.systemevents.8.0.0.nupkg.sha512",
         "microsoft.win32.systemevents.nuspec",
         "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
         "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.xml",
         "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll",
         "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -812,10 +586,10 @@
         "packageIcon.png"
       ]
     },
-    "NLog/5.2.3": {
-      "sha512": "rHTNRtQF5qYqLutSR9ldUWXglKym/KA1R6GKw4JtDvza8i5+kgfmeKH75Ccn1noeJIOjHLXorphMxKk3EiN2tg==",
+    "NLog/5.3.2": {
+      "sha512": "cQRQZuDMjSyMe9EQBnI9v55YAMMz8GAfFd6fFJ6tc/kXnG7Hze8p1I8MgvWSBG6E36wA8vSxRrlm8uSIG+SENg==",
       "type": "package",
-      "path": "nlog/5.2.3",
+      "path": "nlog/5.3.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -832,27 +606,54 @@
         "lib/netstandard1.5/NLog.xml",
         "lib/netstandard2.0/NLog.dll",
         "lib/netstandard2.0/NLog.xml",
-        "nlog.5.2.3.nupkg.sha512",
+        "nlog.5.3.2.nupkg.sha512",
         "nlog.nuspec"
       ]
     },
-    "PKHeX.Core/23.8.23": {
-      "sha512": "Cqxn7CE1fgprvVE4zI2ZB2DzMhjTm9d9GQCtXCzLHbIEy2RqGNEbC8FY9Zrk8LiWquJWdhWGgeZfQMI5Ses0ug==",
+    "PKHeX.Core/24.7.3": {
+      "sha512": "3cNsCcIM7qEzbF/T22kkRxdLxGXiyYOiXL1/Udh91hpsoJlWzSo53oAJytODQtDDZiv23JNLp9c651MZcyx/MA==",
       "type": "package",
-      "path": "pkhex.core/23.8.23",
+      "path": "pkhex.core/24.7.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "icon.png",
-        "lib/net7.0/PKHeX.Core.dll",
-        "pkhex.core.23.8.23.nupkg.sha512",
+        "lib/net8.0/PKHeX.Core.dll",
+        "pkhex.core.24.7.3.nupkg.sha512",
         "pkhex.core.nuspec"
       ]
     },
-    "System.Drawing.Common/7.0.0": {
-      "sha512": "KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
+    "System.CodeDom/7.0.0": {
+      "sha512": "GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
       "type": "package",
-      "path": "system.drawing.common/7.0.0",
+      "path": "system.codedom/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.CodeDom.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.CodeDom.targets",
+        "lib/net462/System.CodeDom.dll",
+        "lib/net462/System.CodeDom.xml",
+        "lib/net6.0/System.CodeDom.dll",
+        "lib/net6.0/System.CodeDom.xml",
+        "lib/net7.0/System.CodeDom.dll",
+        "lib/net7.0/System.CodeDom.xml",
+        "lib/netstandard2.0/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.7.0.0.nupkg.sha512",
+        "system.codedom.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Drawing.Common/8.0.6": {
+      "sha512": "aSwRnJzz6fZ73JvWMMG0KvBwOnXsBTFtfHLriQyAPrDIZ+NrDfl15GWbO/A35k0dtH77D7jfxzEcFF7RONtU/w==",
+      "type": "package",
+      "path": "system.drawing.common/8.0.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -866,23 +667,54 @@
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
         "lib/net462/System.Drawing.Common.dll",
+        "lib/net462/System.Drawing.Common.pdb",
         "lib/net462/System.Drawing.Common.xml",
         "lib/net6.0/System.Drawing.Common.dll",
+        "lib/net6.0/System.Drawing.Common.pdb",
         "lib/net6.0/System.Drawing.Common.xml",
         "lib/net7.0/System.Drawing.Common.dll",
+        "lib/net7.0/System.Drawing.Common.pdb",
         "lib/net7.0/System.Drawing.Common.xml",
+        "lib/net8.0/System.Drawing.Common.dll",
+        "lib/net8.0/System.Drawing.Common.pdb",
+        "lib/net8.0/System.Drawing.Common.xml",
         "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.pdb",
         "lib/netstandard2.0/System.Drawing.Common.xml",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.xml",
-        "runtimes/win/lib/net7.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net7.0/System.Drawing.Common.xml",
-        "system.drawing.common.7.0.0.nupkg.sha512",
+        "system.drawing.common.8.0.6.nupkg.sha512",
         "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Management/7.0.2": {
+      "sha512": "/qEUN91mP/MUQmJnM5y5BdT7ZoPuVrtxnFlbJ8a3kBJGhe2wCzBfnPFtK2wTtEEcf3DMGR9J00GZZfg6HRI6yA==",
+      "type": "package",
+      "path": "system.management/7.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Management.targets",
+        "lib/net462/_._",
+        "lib/net6.0/System.Management.dll",
+        "lib/net6.0/System.Management.xml",
+        "lib/net7.0/System.Management.dll",
+        "lib/net7.0/System.Management.xml",
+        "lib/netstandard2.0/System.Management.dll",
+        "lib/netstandard2.0/System.Management.xml",
+        "runtimes/win/lib/net6.0/System.Management.dll",
+        "runtimes/win/lib/net6.0/System.Management.xml",
+        "runtimes/win/lib/net7.0/System.Management.dll",
+        "runtimes/win/lib/net7.0/System.Management.xml",
+        "system.management.7.0.2.nupkg.sha512",
+        "system.management.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -983,13 +815,13 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0": [
-      "Google.Apis >= 1.61.0",
-      "Google.Apis.Auth >= 1.61.0",
-      "Google.Apis.Core >= 1.61.0",
-      "Google.Apis.YouTube.v3 >= 1.61.0.3155",
+    "net8.0": [
+      "Google.Apis >= 1.68.0",
+      "Google.Apis.Auth >= 1.68.0",
+      "Google.Apis.Core >= 1.68.0",
+      "Google.Apis.YouTube.v3 >= 1.68.0.3421",
       "Google.Apis.YouTubePartner.v1 >= 1.35.1.1334",
-      "PKHeX.Core >= 23.8.23",
+      "PKHeX.Core >= 24.7.3",
       "SysBot.Base >= 1.0.0",
       "SysBot.Pokemon >= 1.0.0"
     ]
@@ -1016,7 +848,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -1024,8 +856,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {
             "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj": {
               "projectPath": "C:\\Users\\Rich\\source\\repos\\MergeBot\\SysBot.Base\\SysBot.Base.csproj"
@@ -1040,27 +872,32 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "Google.Apis": {
             "target": "Package",
-            "version": "[1.61.0, )"
+            "version": "[1.68.0, )"
           },
           "Google.Apis.Auth": {
             "target": "Package",
-            "version": "[1.61.0, )"
+            "version": "[1.68.0, )"
           },
           "Google.Apis.Core": {
             "target": "Package",
-            "version": "[1.61.0, )"
+            "version": "[1.68.0, )"
           },
           "Google.Apis.YouTube.v3": {
             "target": "Package",
-            "version": "[1.61.0.3155, )"
+            "version": "[1.68.0.3421, )"
           },
           "Google.Apis.YouTubePartner.v1": {
             "target": "Package",
@@ -1068,7 +905,7 @@
           },
           "PKHeX.Core": {
             "target": "Package",
-            "version": "[23.8.23, )"
+            "version": "[24.7.3, )"
           }
         },
         "imports": [
@@ -1087,12 +924,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

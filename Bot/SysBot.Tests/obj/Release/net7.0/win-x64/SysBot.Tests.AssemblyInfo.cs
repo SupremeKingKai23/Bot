@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SysBot.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+230709184708")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+231214045030")]
 [assembly: System.Reflection.AssemblyProductAttribute("SysBot.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SysBot.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

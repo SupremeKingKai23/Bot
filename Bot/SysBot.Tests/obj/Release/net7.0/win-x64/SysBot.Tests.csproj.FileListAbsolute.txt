@@ -1,8 +1,6 @@
 C:\Users\Rich\source\repos\MergeBot\SysBot.Tests\bin\Release\net7.0\win-x64\testhost.dll
 C:\Users\Rich\source\repos\MergeBot\SysBot.Tests\bin\Release\net7.0\win-x64\testhost.exe
 C:\Users\Rich\source\repos\MergeBot\SysBot.Tests\bin\Release\net7.0\win-x64\xunit.runner.visualstudio.dotnetcore.testadapter.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Tests\bin\Release\net7.0\win-x64\xunit.runner.reporters.netcoreapp10.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Tests\bin\Release\net7.0\win-x64\xunit.runner.utility.netcoreapp10.dll
 C:\Users\Rich\source\repos\MergeBot\SysBot.Tests\bin\Release\net7.0\win-x64\SysBot.Tests.deps.json
 C:\Users\Rich\source\repos\MergeBot\SysBot.Tests\bin\Release\net7.0\win-x64\SysBot.Tests.runtimeconfig.json
 C:\Users\Rich\source\repos\MergeBot\SysBot.Tests\bin\Release\net7.0\win-x64\SysBot.Tests.dll

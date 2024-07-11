@@ -1,16 +1,9 @@
 ﻿using PKHeX.Core;
 
-namespace SysBot.Pokemon
-{
-    public class LedyResponse<T> where T : PKM, new()
-    {
-        public T Receive { get; }
-        public LedyResponseType Type { get; }
+namespace SysBot.Pokemon;
 
-        public LedyResponse(T pk, LedyResponseType type)
-        {
-            Receive = pk;
-            Type = type;
-        }
-    }
+public class LedyResponse<T>(T pk, LedyResponseType type) where T : PKM, new()
+{
+    public T Receive { get; } = pk;
+    public LedyResponseType Type { get; } = type;
 }

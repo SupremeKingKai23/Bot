@@ -1,16 +1,8 @@
-﻿namespace SysBot.Pokemon
-{
-    public class PartnerDataHolder
-    {
-        public readonly ulong TrainerOnlineID;
-        public readonly string TrainerName;
-        public readonly string TrainerTID;
+﻿namespace SysBot.Pokemon;
 
-        public PartnerDataHolder(ulong trainerNid, string trainerName, string trainerTid)
-        {
-            TrainerOnlineID = trainerNid;
-            TrainerName = trainerName;
-            TrainerTID = trainerTid;
-        }
-    }
+public class PartnerDataHolder(ulong trainerNid, string trainerName, string trainerTid)
+{
+    public readonly ulong TrainerOnlineID = trainerNid;
+    public readonly string TrainerName = trainerName;
+    public readonly string TrainerTID = trainerTid;
 }

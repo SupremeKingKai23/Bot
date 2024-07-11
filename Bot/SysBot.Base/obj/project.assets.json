@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
+    "net8.0": {
       "LibUsbDotNet/2.2.29": {
         "type": "package",
         "dependencies": {
@@ -52,7 +52,7 @@
           }
         }
       },
-      "NLog/5.2.3": {
+      "NLog/5.3.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/NLog.dll": {
@@ -108,90 +108,6 @@
             "assetType": "runtime",
             "rid": "win"
           }
-        }
-      }
-    },
-    "net7.0/win-x64": {
-      "LibUsbDotNet/2.2.29": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Win32.Registry": "4.5.0"
-        },
-        "compile": {
-          "lib/netcoreapp2.0/LibUsbDotNet.LibUsbDotNet.dll": {
-            "related": ".pdb"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/LibUsbDotNet.LibUsbDotNet.dll": {
-            "related": ".pdb"
-          }
-        }
-      },
-      "Microsoft.NETCore.Platforms/2.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/_._": {}
-        }
-      },
-      "Microsoft.Win32.Registry/4.5.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Security.AccessControl": "4.5.0",
-          "System.Security.Principal.Windows": "4.5.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
-        }
-      },
-      "NLog/5.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/NLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/NLog.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Security.AccessControl/4.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0",
-          "System.Security.Principal.Windows": "4.5.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Security.AccessControl.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {}
-        }
-      },
-      "System.Security.Principal.Windows/4.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Security.Principal.Windows.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/netcoreapp2.0/System.Security.Principal.Windows.dll": {}
         }
       }
     }
@@ -273,10 +189,10 @@
         "version.txt"
       ]
     },
-    "NLog/5.2.3": {
-      "sha512": "rHTNRtQF5qYqLutSR9ldUWXglKym/KA1R6GKw4JtDvza8i5+kgfmeKH75Ccn1noeJIOjHLXorphMxKk3EiN2tg==",
+    "NLog/5.3.2": {
+      "sha512": "cQRQZuDMjSyMe9EQBnI9v55YAMMz8GAfFd6fFJ6tc/kXnG7Hze8p1I8MgvWSBG6E36wA8vSxRrlm8uSIG+SENg==",
       "type": "package",
-      "path": "nlog/5.2.3",
+      "path": "nlog/5.3.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -293,7 +209,7 @@
         "lib/netstandard1.5/NLog.xml",
         "lib/netstandard2.0/NLog.dll",
         "lib/netstandard2.0/NLog.xml",
-        "nlog.5.2.3.nupkg.sha512",
+        "nlog.5.3.2.nupkg.sha512",
         "nlog.nuspec"
       ]
     },
@@ -384,9 +300,9 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0": [
+    "net8.0": [
       "LibUsbDotNet >= 2.2.29",
-      "NLog >= 5.2.3"
+      "NLog >= 5.3.2"
     ]
   },
   "packageFolders": {
@@ -411,7 +327,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -419,8 +335,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -428,11 +344,16 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "LibUsbDotNet": {
             "target": "Package",
@@ -440,7 +361,7 @@
           },
           "NLog": {
             "target": "Package",
-            "version": "[5.2.3, )"
+            "version": "[5.3.2, )"
           }
         },
         "imports": [
@@ -459,12 +380,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

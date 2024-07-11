@@ -1,22 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <IsPackable>false</IsPackable>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>12.0</LangVersion>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="FluentAssertions" Version="6.9.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
-    <PackageReference Include="xunit" Version="2.4.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+    <PackageReference Include="xunit" Version="2.8.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\SysBot.Base\SysBot.Base.csproj" />
     <ProjectReference Include="..\SysBot.Pokemon\SysBot.Pokemon.csproj" />
   </ItemGroup>
-
 </Project>

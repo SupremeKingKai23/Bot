@@ -44,16 +44,3 @@ C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\obj\x64\Release\ne
 C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\obj\x64\Release\net7.0\win-x64\refint\SysBot.Pokemon.ConsoleApp.dll
 C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\obj\x64\Release\net7.0\win-x64\SysBot.Pokemon.ConsoleApp.genruntimeconfig.cache
 C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\obj\x64\Release\net7.0\win-x64\ref\SysBot.Pokemon.ConsoleApp.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\EntityFramework.SqlServer.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\EntityFramework.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\Google.FlatBuffers.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\System.Data.SQLite.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\System.CodeDom.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\System.Configuration.ConfigurationManager.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\System.Data.SqlClient.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\System.Data.SQLite.EF6.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\System.Security.Permissions.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\System.Windows.Extensions.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\sni.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.ConsoleApp\bin\x64\Release\net7.0\win-x64\SQLite.Interop.dll

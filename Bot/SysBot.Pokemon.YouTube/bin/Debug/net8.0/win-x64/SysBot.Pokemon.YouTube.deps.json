@@ -1,0 +1,404 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0/win-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {},
+    ".NETCoreApp,Version=v8.0/win-x64": {
+      "SysBot.Pokemon.YouTube/1.0.0": {
+        "dependencies": {
+          "Google.Apis": "1.64.0",
+          "Google.Apis.Auth": "1.64.0",
+          "Google.Apis.Core": "1.64.0",
+          "Google.Apis.YouTube.v3": "1.64.0.3205",
+          "Google.Apis.YouTubePartner.v1": "1.35.1.1334",
+          "PKHeX.Core": "23.10.12",
+          "SysBot.Base": "1.0.0",
+          "SysBot.Pokemon": "1.0.0",
+          "StreamingClient.Base": "1.0.0.1",
+          "YouTube.Base": "1.0.0.1"
+        },
+        "runtime": {
+          "SysBot.Pokemon.YouTube.dll": {}
+        }
+      },
+      "Google.Apis/1.64.0": {
+        "dependencies": {
+          "Google.Apis.Core": "1.64.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.dll": {
+            "assemblyVersion": "1.64.0.0",
+            "fileVersion": "1.64.0.0"
+          }
+        }
+      },
+      "Google.Apis.Auth/1.64.0": {
+        "dependencies": {
+          "Google.Apis": "1.64.0",
+          "Google.Apis.Core": "1.64.0",
+          "System.Management": "7.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {
+            "assemblyVersion": "1.64.0.0",
+            "fileVersion": "1.64.0.0"
+          },
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {
+            "assemblyVersion": "1.64.0.0",
+            "fileVersion": "1.64.0.0"
+          }
+        }
+      },
+      "Google.Apis.Core/1.64.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {
+            "assemblyVersion": "1.64.0.0",
+            "fileVersion": "1.64.0.0"
+          }
+        }
+      },
+      "Google.Apis.YouTube.v3/1.64.0.3205": {
+        "dependencies": {
+          "Google.Apis": "1.64.0",
+          "Google.Apis.Auth": "1.64.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.YouTube.v3.dll": {
+            "assemblyVersion": "1.64.0.3205",
+            "fileVersion": "1.64.0.3205"
+          }
+        }
+      },
+      "Google.Apis.YouTubePartner.v1/1.35.1.1334": {
+        "dependencies": {
+          "Google.Apis": "1.64.0",
+          "Google.Apis.Auth": "1.64.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.YouTubePartner.v1.dll": {
+            "assemblyVersion": "1.35.1.1334",
+            "fileVersion": "1.35.1.1334"
+          }
+        }
+      },
+      "LibUsbDotNet/2.2.29": {
+        "dependencies": {
+          "Microsoft.Win32.Registry": "4.5.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/LibUsbDotNet.LibUsbDotNet.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.29.55645"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/2.0.0": {},
+      "Microsoft.Win32.Registry/4.5.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "4.5.0",
+          "System.Security.Principal.Windows": "4.5.0"
+        }
+      },
+      "Microsoft.Win32.SystemEvents/8.0.0": {
+        "runtime": {
+          "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "NLog/5.2.7": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.2.7.2287"
+          }
+        }
+      },
+      "PKHeX.Core/23.10.12": {
+        "runtime": {
+          "lib/net8.0/PKHeX.Core.dll": {
+            "assemblyVersion": "23.10.11.0",
+            "fileVersion": "23.10.11.0"
+          }
+        }
+      },
+      "System.CodeDom/7.0.0": {
+        "runtime": {
+          "lib/net7.0/System.CodeDom.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "System.Drawing.Common/8.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53105"
+          }
+        }
+      },
+      "System.Management/7.0.2": {
+        "dependencies": {
+          "System.CodeDom": "7.0.0"
+        },
+        "runtime": {
+          "runtimes/win/lib/net7.0/System.Management.dll": {
+            "assemblyVersion": "7.0.0.2",
+            "fileVersion": "7.0.723.27404"
+          }
+        }
+      },
+      "System.Security.AccessControl/4.5.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "System.Security.Principal.Windows": "4.5.0"
+        }
+      },
+      "System.Security.Principal.Windows/4.5.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0"
+        }
+      },
+      "SysBot.Base/1.0.0": {
+        "dependencies": {
+          "LibUsbDotNet": "2.2.29",
+          "NLog": "5.2.7"
+        },
+        "runtime": {
+          "SysBot.Base.dll": {}
+        }
+      },
+      "SysBot.Pokemon/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "PKHeX.Core": "23.10.12",
+          "SysBot.Base": "1.0.0",
+          "System.Drawing.Common": "8.0.0"
+        },
+        "runtime": {
+          "SysBot.Pokemon.dll": {}
+        }
+      },
+      "StreamingClient.Base/1.0.0.1": {
+        "runtime": {
+          "StreamingClient.Base.dll": {
+            "assemblyVersion": "1.0.0.1",
+            "fileVersion": "1.0.0.1"
+          }
+        }
+      },
+      "YouTube.Base/1.0.0.1": {
+        "runtime": {
+          "YouTube.Base.dll": {
+            "assemblyVersion": "1.0.0.1",
+            "fileVersion": "1.0.0.1"
+          }
+        }
+      },
+      "PKHeX.Core.AutoMod/23.12.18.0": {
+        "runtime": {
+          "PKHeX.Core.AutoMod.dll": {
+            "assemblyVersion": "23.12.18.0",
+            "fileVersion": "23.12.18.0"
+          }
+        }
+      },
+      "PKHeX.Drawing.PokeSprite/23.10.11.0": {
+        "runtime": {
+          "PKHeX.Drawing.PokeSprite.dll": {
+            "assemblyVersion": "23.10.11.0",
+            "fileVersion": "23.10.11.0"
+          }
+        }
+      },
+      "PKHeX.Drawing/23.10.11.0": {
+        "runtime": {
+          "PKHeX.Drawing.dll": {
+            "assemblyVersion": "23.10.11.0",
+            "fileVersion": "23.10.11.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SysBot.Pokemon.YouTube/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Google.Apis/1.64.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0ki3AJDiTuV5Cb7NUyq+0DDGDLWcPCKbZC1HgyvAW+o/I0rY/HXMvv6IAF65hhfbQB/Scfm8nuAW3weNEXYkxw==",
+      "path": "google.apis/1.64.0",
+      "hashPath": "google.apis.1.64.0.nupkg.sha512"
+    },
+    "Google.Apis.Auth/1.64.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-u3cwX0E3IpAkROzRPgZtohFSS2DUblkSmwMfh3/2Qwbi/QXHd8ebq2JuCNqmfpJyfgW5AG0+fO0UrrLsYtglMQ==",
+      "path": "google.apis.auth/1.64.0",
+      "hashPath": "google.apis.auth.1.64.0.nupkg.sha512"
+    },
+    "Google.Apis.Core/1.64.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bqrUhDeMFeMdjtv4QT4Z99WDPSEbS6EKnp1bYvqyc/VpEu4oFNMqw8/bk/7SS7Ko+bodDgum8fkvDwCMZtdWDg==",
+      "path": "google.apis.core/1.64.0",
+      "hashPath": "google.apis.core.1.64.0.nupkg.sha512"
+    },
+    "Google.Apis.YouTube.v3/1.64.0.3205": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5xJKKc2Is/cwI1JeX3ju4uPumPkEu95fjyEJHpTEsg8OVJhrHRxoj+7oMku1cvHFfMno6Wn0W+oJ20wANDZPaw==",
+      "path": "google.apis.youtube.v3/1.64.0.3205",
+      "hashPath": "google.apis.youtube.v3.1.64.0.3205.nupkg.sha512"
+    },
+    "Google.Apis.YouTubePartner.v1/1.35.1.1334": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fvJY45/r9oE5ZBqlCdEBWEorpDJOjXe0nZ4CdzS/+Qb92NLUeAK0QyEcqjDD8jXtuevLBpo+hZld7zf68LTD1w==",
+      "path": "google.apis.youtubepartner.v1/1.35.1.1334",
+      "hashPath": "google.apis.youtubepartner.v1.1.35.1.1334.nupkg.sha512"
+    },
+    "LibUsbDotNet/2.2.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kYXcaTDhoJlZP7yuh3yuBTYQxzw1p+QXpJnGRkdtGMq7Vy7NTD/DzBLnZR72gL7HEQUz+mpyRpq+ZOySwQb4Zw==",
+      "path": "libusbdotnet/2.2.29",
+      "hashPath": "libusbdotnet.2.2.29.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+      "path": "microsoft.netcore.platforms/2.0.0",
+      "hashPath": "microsoft.netcore.platforms.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.Registry/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+FWlwd//+Tt56316p00hVePBCouXyEzT86Jb3+AuRotTND0IYn0OO3obs1gnQEs/txEnt+rF2JBGLItTG+Be6A==",
+      "path": "microsoft.win32.registry/4.5.0",
+      "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9opKRyOKMCi2xJ7Bj7kxtZ1r9vbzosMvRrdEhVhDz8j8MoBGgB+WmC94yH839NPH+BclAjtQ/pyagvi/8gDLkw==",
+      "path": "microsoft.win32.systemevents/8.0.0",
+      "hashPath": "microsoft.win32.systemevents.8.0.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "NLog/5.2.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ww/0b6V1NL8iqpFKtRKVQFFX03LoowNzYeNG6FpVzmhgCfLAkW0h/4lT3+V8mHfyvtHptNoV8Cz0YePLFRUaPA==",
+      "path": "nlog/5.2.7",
+      "hashPath": "nlog.5.2.7.nupkg.sha512"
+    },
+    "PKHeX.Core/23.10.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RbfiyBZiRFJksWyzymar5tB67W2JxnK3X0j9TJkwtBWXxLKI63IXHx6ReXE+sJhQyd++tFKTpriqQ85L4cNYrw==",
+      "path": "pkhex.core/23.10.12",
+      "hashPath": "pkhex.core.23.10.12.nupkg.sha512"
+    },
+    "System.CodeDom/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
+      "path": "system.codedom/7.0.0",
+      "hashPath": "system.codedom.7.0.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JkbHJjtI/dWc5dfmEdJlbe3VwgZqCkZRtfuWFh5GOv0f+gGCfBtzMpIVkmdkj2AObO9y+oiOi81UGwH3aBYuqA==",
+      "path": "system.drawing.common/8.0.0",
+      "hashPath": "system.drawing.common.8.0.0.nupkg.sha512"
+    },
+    "System.Management/7.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/qEUN91mP/MUQmJnM5y5BdT7ZoPuVrtxnFlbJ8a3kBJGhe2wCzBfnPFtK2wTtEEcf3DMGR9J00GZZfg6HRI6yA==",
+      "path": "system.management/7.0.2",
+      "hashPath": "system.management.7.0.2.nupkg.sha512"
+    },
+    "System.Security.AccessControl/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vW8Eoq0TMyz5vAG/6ce483x/CP83fgm4SJe5P8Tb1tZaobcvPrbMEL7rhH1DRdrYbbb6F0vq3OlzmK0Pkwks5A==",
+      "path": "system.security.accesscontrol/4.5.0",
+      "hashPath": "system.security.accesscontrol.4.5.0.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-U77HfRXlZlOeIXd//Yoj6Jnk8AXlbeisf1oq1os+hxOGVnuG+lGSfGqTwTZBoORFF6j/0q7HXIl8cqwQ9aUGqQ==",
+      "path": "system.security.principal.windows/4.5.0",
+      "hashPath": "system.security.principal.windows.4.5.0.nupkg.sha512"
+    },
+    "SysBot.Base/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SysBot.Pokemon/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StreamingClient.Base/1.0.0.1": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "YouTube.Base/1.0.0.1": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PKHeX.Core.AutoMod/23.12.18.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PKHeX.Drawing.PokeSprite/23.10.11.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PKHeX.Drawing/23.10.11.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

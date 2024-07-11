@@ -12,6 +12,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Update="Controls\BotController.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="Main.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

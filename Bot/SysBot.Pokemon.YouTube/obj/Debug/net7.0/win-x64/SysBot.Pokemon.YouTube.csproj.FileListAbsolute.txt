@@ -28,6 +28,8 @@ C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\bin\Debug\net7.0\win-
 C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\bin\Debug\net7.0\win-x64\SysBot.Pokemon.dll
 C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\bin\Debug\net7.0\win-x64\YouTube.Base.dll
 C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\bin\Debug\net7.0\win-x64\PKHeX.Core.AutoMod.dll
+C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\bin\Debug\net7.0\win-x64\PKHeX.Drawing.PokeSprite.dll
+C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\bin\Debug\net7.0\win-x64\PKHeX.Drawing.dll
 C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\bin\Debug\net7.0\win-x64\SysBot.Base.pdb
 C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\bin\Debug\net7.0\win-x64\SysBot.Pokemon.pdb
 C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\obj\Debug\net7.0\win-x64\SysBot.Pokemon.YouTube.csproj.AssemblyReference.cache
@@ -40,5 +42,4 @@ C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\obj\Debug\net7.0\win-
 C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\obj\Debug\net7.0\win-x64\refint\SysBot.Pokemon.YouTube.dll
 C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\obj\Debug\net7.0\win-x64\SysBot.Pokemon.YouTube.pdb
 C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\obj\Debug\net7.0\win-x64\ref\SysBot.Pokemon.YouTube.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\bin\Debug\net7.0\win-x64\PKHeX.Drawing.PokeSprite.dll
-C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\bin\Debug\net7.0\win-x64\PKHeX.Drawing.dll
+C:\Users\Rich\source\repos\MergeBot\SysBot.Pokemon.YouTube\obj\Debug\net7.0\win-x64\SysBot.Pokemon.YouTube.sourcelink.json
